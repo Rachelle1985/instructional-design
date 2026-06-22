@@ -2,7 +2,24 @@
   "permissions": {
     "allow": [
       "Bash(git --version)",
-      "Bash(gh --version)"
+      "Bash(gh --version)",
+      "Bash(git commit *)",
+      "Bash(git config *)",
+      "Bash(gh repo *)",
+      "PowerShell(\\(Get-Command gh -ErrorAction SilentlyContinue\\).Source)",
+      "PowerShell(gh repo list Rachelle1985 --limit 20 2>&1)",
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "Read(//c/Users/Rachelle Babcock/AppData/Roaming/Claude/local-agent-mode-sessions/skills-plugin/69a97cc1-e986-4899-b3be-58c4095f6bc1/d4100956-3002-4e32-8c90-d4246e2c4a24/skills/pdf/**)",
+      "Bash(python -c ' *)",
+      "PowerShell($env:Path = [System.Environment]::GetEnvironmentVariable\\(\"Path\",\"Machine\"\\) + \";\" + [System.Environment]::GetEnvironmentVariable\\(\"Path\",\"User\"\\); python --version 2>&1)",
+      "Bash(vercel --version)",
+      "Bash(vercel projects *)",
+      "PowerShell(node --version; npm --version; \\(Get-Command python -ErrorAction SilentlyContinue\\).Source; \\(Get-Command py -ErrorAction SilentlyContinue\\).Source)",
+      "PowerShell(winget install OpenJS.NodeJS.LTS --accept-source-agreements --accept-package-agreements --silent)",
+      "PowerShell($env:Path = [System.Environment]::GetEnvironmentVariable\\(\"Path\",\"Machine\"\\) + \";\" + [System.Environment]::GetEnvironmentVariable\\(\"Path\",\"User\"\\); node --version; npm --version)",
+      "PowerShell($prefix = npm config get prefix; Write-Output \"npm prefix: $prefix\"; Test-Path \"$prefix\\\\vercel.cmd\")",
+      "Bash(git clone *)",
+      "Bash(git add *)"
     ]
   }
 }

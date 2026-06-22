@@ -1,0 +1,1569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dr. Rachelle Babcock | Web Education Services</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:ital,wght@0,500;0,600;0,700;0,800;1,600;1,700&display=swap" rel="stylesheet" />
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  /* ── Brand Blue ── */
+  --blue-900: #064273;   /* dark headings, footer, nav */
+  --blue-800: #0570B0;   /* legacy alias → Blue 700 */
+  --blue-700: #0570B0;   /* strong emphasis, active */
+  --blue-600: #0381CC;   /* PRIMARY brand blue — buttons, links, icons */
+  --blue-500: #1A9FE0;   /* hover, secondary links */
+  --blue-400: #1A9FE0;   /* legacy alias → Blue 500 */
+  --blue-200: #CCE9F9;   /* legacy alias → Blue 100 */
+  --blue-100: #CCE9F9;   /* light blue bg, tags, badges */
+  --blue-50:  #EBF5FC;   /* subtle blue wash */
+
+  /* ── Brand Yellow (legacy "amber" names remapped) ── */
+  --yellow-600: #C9A800; /* dark yellow text on light bg */
+  --yellow-500: #FDD618; /* PRIMARY CTA, highlights */
+  --yellow-400: #FDE04A; /* CTA hover */
+  --yellow-100: #FEF6CC; /* light yellow bg, callouts */
+  --yellow-50:  #FFFBE5; /* subtle yellow wash */
+  --amber-900: #064273;  /* text on yellow = Blue 900 */
+  --amber-800: #C9A800;  /* → Yellow 600 */
+  --amber-700: #C9A800;  /* → Yellow 600 */
+  --amber-600: #C9A800;  /* → Yellow 600 */
+  --amber-400: #FDD618;  /* → Yellow 500 */
+  --amber-300: #FDD618;  /* primary accent → Yellow 500 */
+  --amber-100: #FDE04A;  /* hover → Yellow 400 */
+  --amber-50:  #FFFBE5;  /* → Yellow 50 */
+
+  /* ── Neutrals ── */
+  --gray-900: #111827;
+  --gray-700: #374151;
+  --gray-600: #4B5563;
+  --gray-500: #6B7280;
+  --gray-400: #9CA3AF;
+  --gray-300: #D1D5DB;
+  --gray-200: #E5E7EB;
+  --gray-100: #F3F4F6;
+  --gray-50:  #F9FAFB;
+  --white: #FFFFFF;
+
+  /* ── Typography ── */
+  --font-heading: 'Plus Jakarta Sans', 'Segoe UI', Arial, sans-serif;
+  --font-body: 'Inter', 'Segoe UI', Arial, sans-serif;
+  --font-sans: 'Inter', 'Segoe UI', Arial, sans-serif;          /* legacy → body */
+  --font-serif: 'Plus Jakarta Sans', 'Segoe UI', Arial, sans-serif; /* legacy heading slot */
+
+  /* ── Radii ── */
+  --r-sm: 6px;  --r-md: 8px;  --r-lg: 12px;  --r-xl: 16px;
+  --radius-sm: 6px; --radius-md: 8px; --radius-lg: 12px; --radius-xl: 16px; --radius-full: 9999px;
+
+  /* ── Spacing ── */
+  --space-xs:4px; --space-sm:8px; --space-md:16px; --space-lg:24px;
+  --space-xl:32px; --space-2xl:48px; --space-3xl:64px; --space-4xl:96px;
+
+  /* ── Shadows ── */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-md: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-lg: 0 4px 12px rgba(0,0,0,0.1);
+  --shadow-xl: 0 8px 24px rgba(0,0,0,0.12);
+
+  /* ── Layout ── */
+  --container-max: 1200px; --content-max: 720px;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); background: var(--white); color: var(--gray-700); overflow-x: hidden; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+
+/* Headings use Plus Jakarta Sans with brand weights */
+.hero h1 { font-weight: 800; letter-spacing: -0.02em; }
+h2.section-title, .ai-focus-headline, .contact-tagline, .report-name { font-weight: 700; letter-spacing: -0.01em; }
+.service-name, .report-card-title, .report-card-featured-title, .lms-analytics-title,
+.about-photo-name, .report-card-featured-right h4, .footer-logo, .nav-logo-name { font-weight: 700; }
+.stat-n, .ai-stat-num, .step-num { font-weight: 800; }
+.about-left blockquote, .ai-quote, .lms-banner-text { font-weight: 600; }
+
+/* ── ICON SYSTEM (stroke-based SVG sprite) ── */
+.ico { display: inline-block; vertical-align: middle; flex-shrink: 0; width: 24px; height: 24px; }
+.icon-sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+.principle-icon { color: var(--blue-600); }
+.service-icon { color: var(--blue-600); }
+.ai-pillar-icon { color: var(--yellow-600); }
+.lms-feat-icon.navy { color: #FFFFFF; }
+.lms-feat-icon.amber { color: var(--yellow-500); }
+.nav-logo-icon { color: #FFFFFF; }
+.project-thumb svg { color: rgba(255,255,255,0.92); }
+.contact-info-row > .ico { color: var(--blue-600); }
+.report-category .ico { width: 14px; height: 14px; margin-right: 1px; }
+.eyebrow .ico { color: var(--blue-600); }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: var(--blue-900);
+  padding: 0 2.5rem;
+  height: 68px;
+  display: flex; align-items: center; justify-content: space-between;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.08);
+}
+.nav-logo {
+  display: flex; align-items: center; gap: 12px;
+  text-decoration: none;
+}
+.nav-logo-icon {
+  width: 38px; height: 38px; border-radius: var(--r-md);
+  background: var(--blue-600);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+}
+.nav-logo-text { line-height: 1.15; }
+.nav-logo-name {
+  font-family: var(--font-serif);
+  font-size: 15px; color: var(--white);
+}
+.nav-logo-sub { font-size: 11px; color: var(--blue-200); letter-spacing: 0.04em; }
+.nav-links { display: flex; align-items: center; gap: 1.8rem; list-style: none; }
+.nav-links a {
+  font-size: 13.5px; font-weight: 400;
+  color: var(--blue-100); text-decoration: none;
+  letter-spacing: 0.01em; transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--amber-300); }
+.nav-cta {
+  background: var(--yellow-500); color: var(--blue-900) !important;
+  padding: 10px 22px; border-radius: var(--r-md);
+  font-weight: 600 !important; transition: background 0.2s !important;
+  white-space: nowrap; box-shadow: 0 2px 8px rgba(253,214,24,0.3);
+}
+.nav-cta:hover { background: var(--yellow-400) !important; }
+
+/* ── HERO ── */
+.hero {
+  background: var(--blue-900);
+  padding: 120px 2.5rem 80px;
+  text-align: center;
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; top: -80px; right: -80px;
+  width: 480px; height: 480px; border-radius: 50%;
+  background: rgba(26,159,224,0.07);
+}
+.hero::after {
+  content: '';
+  position: absolute; bottom: -100px; left: -60px;
+  width: 400px; height: 400px; border-radius: 50%;
+  background: rgba(253,214,24,0.06);
+}
+.hero-inner { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
+.hero-eyebrow {
+  display: inline-block;
+  font-size: 12px; font-weight: 500; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--amber-300);
+  background: rgba(253,214,24,0.12); border: 1px solid rgba(253,214,24,0.25);
+  padding: 5px 16px; border-radius: 100px; margin-bottom: 1.5rem;
+}
+.hero h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  color: var(--white); line-height: 1.15; margin-bottom: 1.25rem;
+}
+.hero h1 em { font-style: italic; color: var(--amber-300); }
+.hero-sub {
+  font-size: 17px; font-weight: 300; color: var(--blue-100);
+  line-height: 1.75; max-width: 560px; margin: 0 auto 2.5rem;
+}
+.hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--yellow-500); color: var(--blue-900);
+  padding: 14px 28px; border-radius: var(--r-md);
+  font-size: 16px; font-weight: 600; text-decoration: none;
+  box-shadow: 0 2px 8px rgba(253,214,24,0.3);
+  transition: background 0.15s, transform 0.1s; white-space: nowrap;
+}
+.btn-primary:hover { background: var(--yellow-400); transform: translateY(-1px); }
+.btn-outline-white {
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 1.5px solid rgba(255,255,255,0.25); color: var(--white);
+  padding: 14px 28px; border-radius: var(--r-md);
+  font-size: 16px; font-weight: 600; text-decoration: none;
+  transition: border-color 0.15s, background 0.15s;
+}
+.btn-outline-white:hover { border-color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); }
+
+/* ── STATS BAR ── */
+.stats-bar {
+  background: var(--blue-800);
+  padding: 1.75rem 2.5rem;
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  max-width: 900px; margin: 0 auto;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.stat-item { text-align: center; padding: 0 1rem; }
+.stat-item + .stat-item { border-left: 1px solid rgba(255,255,255,0.1); }
+.stat-n {
+  font-family: var(--font-serif);
+  font-size: 2rem; color: var(--white); line-height: 1; margin-bottom: 4px;
+}
+.stat-n span { color: var(--amber-300); }
+.stat-label { font-size: 12px; color: var(--blue-200); letter-spacing: 0.02em; }
+
+/* ── SHARED SECTION ── */
+.section { padding: 5rem 2.5rem; max-width: 1000px; margin: 0 auto; }
+.section-full { padding: 5rem 0; }
+.section-full .section-inner { max-width: 1000px; margin: 0 auto; padding: 0 2.5rem; }
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 11.5px; font-weight: 500; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--blue-600); margin-bottom: 0.75rem;
+}
+.eyebrow::before { content: ''; width: 18px; height: 2px; background: var(--amber-300); border-radius: 2px; }
+h2.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 3vw, 2.4rem);
+  color: var(--blue-900); line-height: 1.2; margin-bottom: 1rem;
+}
+h2.section-title em { font-style: italic; color: var(--blue-600); }
+.section-lead { font-size: 16px; font-weight: 300; color: var(--gray-600); line-height: 1.75; max-width: 560px; }
+
+/* ── ABOUT ── */
+#about { background: var(--gray-50); padding: 5rem 0; }
+#about .section-inner { max-width: 1000px; margin: 0 auto; padding: 0 2.5rem; }
+.about-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 5rem; align-items: start; margin-top: 2.5rem;
+}
+.about-photo-wrap {
+  display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1.75rem;
+}
+.about-photo {
+  width: 90px; height: 90px; border-radius: 50%; flex-shrink: 0;
+  object-fit: cover;
+  border: 3px solid var(--amber-300);
+  box-shadow: 0 4px 20px rgba(3,129,204,0.15);
+}
+.about-photo-placeholder {
+  width: 90px; height: 90px; border-radius: 50%; flex-shrink: 0;
+  background: linear-gradient(135deg, var(--blue-800), var(--blue-600));
+  border: 3px solid var(--amber-300);
+  box-shadow: 0 4px 20px rgba(3,129,204,0.15);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-serif); font-size: 1.6rem; color: var(--white);
+  letter-spacing: 0.02em;
+}
+.about-photo-info { }
+.about-photo-name { font-family: var(--font-serif); font-size: 1.1rem; color: var(--blue-900); line-height: 1.2; }
+.about-photo-cred { font-size: 13px; color: var(--gray-500); margin-top: 3px; }
+.about-left blockquote {
+  font-family: var(--font-serif);
+  font-size: 1.4rem; line-height: 1.45;
+  color: var(--blue-900);
+  border-left: 3px solid var(--amber-300);
+  padding-left: 1.25rem; margin-bottom: 1.5rem;
+}
+.about-body { font-size: 15px; font-weight: 300; color: var(--gray-600); line-height: 1.8; }
+.about-body p + p { margin-top: 1rem; }
+.about-right { display: flex; flex-direction: column; gap: 1rem; }
+.principle {
+  display: flex; gap: 1rem; align-items: flex-start;
+  padding: 1.1rem 1.25rem;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--r-lg);
+  transition: border-color 0.2s;
+}
+.principle:hover { border-color: var(--blue-400); }
+.principle-icon {
+  width: 36px; height: 36px; flex-shrink: 0; border-radius: 8px;
+  background: var(--blue-50); border: 1px solid var(--blue-100);
+  display: flex; align-items: center; justify-content: center; font-size: 16px;
+}
+.principle strong { font-size: 14px; font-weight: 500; color: var(--blue-900); display: block; margin-bottom: 3px; }
+.principle span { font-size: 13px; color: var(--gray-500); line-height: 1.55; }
+
+/* ── SERVICES ── */
+#services { background: var(--white); }
+.services-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem; margin-top: 2.5rem;
+}
+.service-card {
+  border: 1px solid var(--gray-200); border-radius: var(--r-xl);
+  padding: 1.75rem; background: var(--white);
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  position: relative; overflow: hidden;
+}
+.service-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: var(--blue-600); opacity: 0; transition: opacity 0.2s;
+}
+.service-card:hover { border-color: var(--blue-400); transform: translateY(-3px); box-shadow: 0 8px 30px rgba(3,129,204,0.1); }
+.service-card:hover::before { opacity: 1; }
+.service-icon {
+  width: 46px; height: 46px; border-radius: var(--r-md);
+  background: var(--blue-50); border: 1px solid var(--blue-100);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; margin-bottom: 1.1rem;
+}
+.service-name { font-family: var(--font-serif); font-size: 1.05rem; color: var(--blue-900); margin-bottom: 0.5rem; }
+.service-desc { font-size: 13.5px; font-weight: 300; color: var(--gray-500); line-height: 1.65; margin-bottom: 1rem; }
+.service-tags { display: flex; gap: 5px; flex-wrap: wrap; }
+.tag {
+  font-size: 11px; font-weight: 500; letter-spacing: 0.03em;
+  padding: 3px 9px; border-radius: 100px;
+  background: var(--blue-50); color: var(--blue-800);
+  border: 1px solid var(--blue-100);
+}
+.tag.amber { background: var(--amber-50); color: var(--amber-800); border-color: var(--amber-100); }
+
+/* ── AI FOCUS ── */
+#ai-focus { background: var(--white); padding: 5rem 0; }
+#ai-focus .section-inner { max-width: 1000px; margin: 0 auto; padding: 0 2.5rem; }
+.ai-focus-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 4rem; align-items: center; margin-top: 2.5rem;
+}
+.ai-focus-left { }
+.ai-focus-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--amber-50); color: var(--amber-800);
+  border: 1px solid var(--amber-100);
+  font-size: 12px; font-weight: 500; letter-spacing: 0.06em;
+  text-transform: uppercase; padding: 6px 14px; border-radius: 100px;
+  margin-bottom: 1.25rem;
+}
+.ai-focus-headline {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  color: var(--blue-900); line-height: 1.2; margin-bottom: 1rem;
+}
+.ai-focus-headline em { font-style: italic; color: var(--blue-600); }
+.ai-focus-body { font-size: 15px; font-weight: 300; color: var(--gray-600); line-height: 1.8; margin-bottom: 1.5rem; }
+.ai-pillar-list { list-style: none; display: flex; flex-direction: column; gap: 0.85rem; }
+.ai-pillar {
+  display: flex; gap: 1rem; align-items: flex-start;
+  padding: 1rem 1.2rem;
+  border-radius: var(--r-lg);
+  border: 1px solid var(--gray-200);
+  background: var(--gray-50);
+  transition: border-color 0.2s;
+}
+.ai-pillar:hover { border-color: var(--amber-300); }
+.ai-pillar-icon {
+  width: 36px; height: 36px; flex-shrink: 0; border-radius: 8px;
+  background: var(--amber-50); border: 1px solid var(--amber-100);
+  display: flex; align-items: center; justify-content: center; font-size: 16px;
+}
+.ai-pillar strong { font-size: 13.5px; font-weight: 500; color: var(--blue-900); display: block; margin-bottom: 3px; }
+.ai-pillar span { font-size: 12.5px; color: var(--gray-500); line-height: 1.55; }
+.ai-focus-right {
+  background: var(--blue-900); border-radius: var(--r-xl);
+  padding: 2rem; position: relative; overflow: hidden;
+}
+.ai-focus-right::before {
+  content: ''; position: absolute; top: -60px; right: -60px;
+  width: 200px; height: 200px; border-radius: 50%;
+  background: rgba(253,214,24,0.08);
+}
+.ai-stat-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
+.ai-stat {
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--r-lg); padding: 1.1rem; text-align: center;
+}
+.ai-stat-num { font-family: var(--font-serif); font-size: 1.8rem; color: var(--amber-300); line-height: 1; margin-bottom: 5px; }
+.ai-stat-label { font-size: 12px; color: var(--blue-200); line-height: 1.4; }
+.ai-quote {
+  font-family: var(--font-serif); font-size: 1rem; font-style: italic;
+  color: var(--white); line-height: 1.6;
+  border-left: 3px solid var(--amber-300); padding-left: 1rem;
+  margin-bottom: 1.25rem; position: relative; z-index: 1;
+}
+.ai-ethics-tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(253,214,24,0.15); border: 1px solid rgba(253,214,24,0.3);
+  color: var(--amber-300); font-size: 12px; font-weight: 500;
+  padding: 6px 14px; border-radius: 100px; margin-bottom: 0.75rem;
+}
+.ai-ethics-body { font-size: 13px; color: var(--blue-100); line-height: 1.7; position: relative; z-index: 1; }
+
+/* ── CUSTOM LMS ── */
+#lms { background: var(--blue-900); padding: 5rem 0 3rem; }
+#lms .section-inner { max-width: 1000px; margin: 0 auto; padding: 0 2.5rem; }
+#lms .eyebrow { color: var(--amber-300); }
+#lms .eyebrow::before { background: var(--amber-300); }
+#lms .section-title { color: var(--white); }
+#lms .section-lead { color: var(--blue-100); }
+.lms-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 4rem; align-items: start; margin-top: 2.5rem;
+}
+.lms-features { display: flex; flex-direction: column; gap: 1rem; }
+.lms-feat {
+  display: flex; gap: 1rem; align-items: flex-start;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--r-lg); padding: 1.25rem 1.4rem;
+  transition: border-color 0.2s, background 0.2s;
+}
+.lms-feat:hover { border-color: rgba(253,214,24,0.4); background: rgba(255,255,255,0.07); }
+.lms-feat-icon {
+  width: 40px; height: 40px; flex-shrink: 0; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center; font-size: 18px;
+}
+.lms-feat-icon.navy { background: rgba(255,255,255,0.08); }
+.lms-feat-icon.amber { background: rgba(253,214,24,0.15); }
+.lms-feat-title { font-size: 14px; font-weight: 500; color: var(--white); margin-bottom: 4px; }
+.lms-feat-desc { font-size: 13px; font-weight: 300; color: var(--blue-100); line-height: 1.65; }
+.lms-analytics-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(253,214,24,0.25);
+  border-radius: var(--r-xl); padding: 1.75rem;
+  margin-top: 1rem;
+}
+.lms-analytics-title {
+  font-family: var(--font-serif); font-size: 1.15rem;
+  color: var(--amber-300); margin-bottom: 1rem;
+}
+.analytics-insight-list { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+.analytics-insight-list li {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 13px; color: var(--blue-100); line-height: 1.55;
+}
+.analytics-insight-list li::before {
+  content: '→'; color: var(--amber-300); flex-shrink: 0; font-weight: 500;
+}
+.lms-banner {
+  margin-top: 3rem;
+  background: var(--amber-300);
+  border-radius: var(--r-xl); padding: 2rem 2.5rem;
+  display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap;
+}
+.lms-banner-text { font-family: var(--font-serif); font-size: 1.2rem; color: var(--amber-900); line-height: 1.3; }
+.lms-banner-btn {
+  background: var(--blue-900); color: var(--white);
+  padding: 13px 26px; border-radius: var(--r-md);
+  font-size: 15px; font-weight: 600; text-decoration: none; white-space: nowrap;
+  transition: background 0.2s;
+}
+.lms-banner-btn:hover { background: var(--blue-700); }
+
+/* ── DEMO CTA ── */
+#demo { background: var(--blue-900); padding: 5rem 0; }
+#demo .section-inner { max-width: 1000px; margin: 0 auto; padding: 0 2.5rem; }
+.demo-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 4rem; align-items: center; margin-top: 2.5rem;
+}
+.demo-left .eyebrow { color: var(--amber-300); }
+.demo-left .eyebrow::before { background: var(--amber-300); }
+.demo-left h2.section-title { color: var(--white); }
+.demo-left .section-lead { color: var(--blue-100); }
+.demo-features { list-style: none; margin-top: 1.75rem; display: flex; flex-direction: column; gap: 0.75rem; }
+.demo-features li {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 14px; color: var(--blue-100);
+}
+.demo-features li::before {
+  content: '✓'; width: 20px; height: 20px; border-radius: 50%;
+  background: rgba(253,214,24,0.15); color: var(--amber-300);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; flex-shrink: 0;
+}
+.demo-cta-row { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2rem; }
+.demo-preview {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--r-xl);
+  padding: 1.5rem;
+  position: relative; overflow: hidden;
+}
+.demo-browser-bar {
+  display: flex; align-items: center; gap: 6px;
+  margin-bottom: 1rem; padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.dot { width: 10px; height: 10px; border-radius: 50%; }
+.dot.red { background: #ff5f57; }
+.dot.yellow { background: #febc2e; }
+.dot.green { background: #28c840; }
+.demo-browser-url {
+  flex: 1; margin-left: 8px; background: rgba(255,255,255,0.06);
+  border-radius: var(--r-sm); padding: 5px 10px;
+  font-size: 11px; color: var(--blue-200); letter-spacing: 0.03em;
+}
+.demo-tabs { display: flex; gap: 4px; margin-bottom: 1rem; }
+.demo-tab {
+  flex: 1; padding: 7px 4px; font-size: 11px; text-align: center;
+  border-radius: 8px; color: rgba(255,255,255,0.4);
+  background: rgba(255,255,255,0.04);
+}
+.demo-tab.active { background: var(--blue-600); color: var(--white); }
+.demo-screen-items { display: flex; flex-direction: column; gap: 8px; }
+.demo-screen-row {
+  background: rgba(255,255,255,0.05); border-radius: var(--r-md);
+  padding: 10px 12px; display: flex; align-items: center; gap: 10px;
+}
+.demo-screen-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.demo-screen-dot.done { background: #10B981; }
+.demo-screen-dot.active { background: var(--amber-300); }
+.demo-screen-dot.todo { background: rgba(255,255,255,0.2); }
+.demo-screen-text { font-size: 12px; color: rgba(255,255,255,0.7); }
+.demo-screen-bar { flex: 1; height: 4px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; }
+.demo-screen-fill { height: 100%; border-radius: 4px; }
+
+/* ── PROCESS ── */
+#process { background: var(--blue-50); padding: 5rem 0; }
+#process .section-inner { max-width: 1000px; margin: 0 auto; padding: 0 2.5rem; }
+.process-steps {
+  display: grid; grid-template-columns: repeat(5, 1fr);
+  gap: 0; margin-top: 3rem;
+  border: 1px solid var(--gray-200); border-radius: var(--r-xl);
+  overflow: hidden; background: var(--white);
+}
+.process-step {
+  padding: 1.75rem 1.4rem;
+  border-right: 1px solid var(--gray-200);
+  transition: background 0.2s;
+  position: relative;
+}
+.process-step:last-child { border-right: none; }
+.process-step:hover { background: var(--blue-900); }
+.process-step:hover .step-num { color: rgba(255,255,255,0.1); }
+.process-step:hover .step-name { color: var(--white); }
+.process-step:hover .step-desc { color: rgba(255,255,255,0.55); }
+.step-num {
+  font-family: var(--font-serif);
+  font-size: 2.4rem; color: var(--gray-200);
+  line-height: 1; margin-bottom: 1rem;
+  transition: color 0.2s;
+}
+.step-name {
+  font-size: 14px; font-weight: 500; color: var(--blue-900);
+  margin-bottom: 0.5rem; transition: color 0.2s;
+}
+.step-desc { font-size: 12.5px; font-weight: 300; color: var(--gray-500); line-height: 1.6; transition: color 0.2s; }
+
+/* ── PORTFOLIO ── */
+#portfolio { background: var(--white); }
+.portfolio-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem; margin-top: 2.5rem;
+}
+.project-card {
+  border: 1px solid var(--gray-200); border-radius: var(--r-xl);
+  overflow: hidden; background: var(--white);
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.project-card:hover { border-color: var(--blue-400); transform: translateY(-3px); box-shadow: 0 8px 30px rgba(3,129,204,0.1); }
+.project-thumb {
+  height: 140px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2.5rem; position: relative;
+}
+.pt-1 { background: linear-gradient(135deg, #064273, #0381CC); }
+.pt-2 { background: linear-gradient(135deg, #0570B0, #1A9FE0); }
+.pt-3 { background: linear-gradient(135deg, #053a63, #0570B0); }
+.pt-4 { background: linear-gradient(135deg, #0381CC, #1A9FE0); }
+.thumb-label {
+  position: absolute; bottom: 8px; left: 10px;
+  font-size: 10px; font-weight: 500; letter-spacing: 0.05em;
+  text-transform: uppercase; color: rgba(255,255,255,0.55);
+}
+.project-body { padding: 1.25rem; }
+.project-name { font-size: 14px; font-weight: 500; color: var(--blue-900); margin-bottom: 5px; }
+.project-desc { font-size: 13px; font-weight: 300; color: var(--gray-500); line-height: 1.6; margin-bottom: 0.85rem; }
+.project-link {
+  font-size: 13px; font-weight: 500; color: var(--blue-600);
+  text-decoration: none; display: inline-flex; align-items: center; gap: 4px;
+}
+.project-link:hover { color: var(--amber-600); text-decoration: underline; }
+.project-cta {
+  border: 1.5px dashed var(--gray-300); border-radius: var(--r-xl);
+  padding: 2rem; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; text-align: center;
+  background: var(--gray-50); transition: border-color 0.2s;
+  min-height: 220px;
+}
+.project-cta:hover { border-color: var(--blue-400); }
+
+/* ── WES REPORT ── */
+#wes-report { background: var(--gray-50); padding: 5rem 0; }
+#wes-report .section-inner { max-width: 1000px; margin: 0 auto; padding: 0 2.5rem; }
+.report-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2.5rem; flex-wrap: wrap; gap: 1rem; }
+.report-title-block { }
+.report-name {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  color: var(--blue-900); line-height: 1.1; margin-bottom: 0.4rem;
+}
+.report-name span { color: var(--amber-400); }
+.report-tagline { font-size: 14px; font-weight: 300; color: var(--gray-500); line-height: 1.5; max-width: 420px; }
+.report-subscribe {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--blue-900); color: var(--white);
+  padding: 11px 22px; border-radius: var(--r-md);
+  font-size: 14px; font-weight: 600; text-decoration: none;
+  transition: background 0.2s; white-space: nowrap;
+}
+.report-subscribe:hover { background: var(--blue-700); }
+.report-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+.report-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200); border-radius: var(--r-xl);
+  overflow: hidden;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.report-card:hover { border-color: var(--blue-400); transform: translateY(-3px); box-shadow: 0 8px 30px rgba(3,129,204,0.1); }
+.report-card-header {
+  padding: 1.5rem 1.5rem 0;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.report-category {
+  font-size: 11px; font-weight: 500; letter-spacing: 0.07em;
+  text-transform: uppercase; padding: 4px 10px; border-radius: 100px;
+}
+.cat-ai { background: var(--yellow-50); color: var(--yellow-600); border: 1px solid var(--yellow-100); }
+.cat-tools { background: var(--blue-50); color: var(--blue-700); border: 1px solid var(--blue-100); }
+.cat-strategy { background: var(--blue-50); color: var(--blue-700); border: 1px solid var(--blue-100); }
+.cat-trends { background: var(--blue-50); color: var(--blue-700); border: 1px solid var(--blue-100); }
+.cat-risk { background: var(--yellow-50); color: var(--yellow-600); border: 1px solid var(--yellow-100); }
+
+/* Featured article card */
+.report-card-featured {
+  grid-column: 1 / -1;
+  background: var(--white);
+  border: 2px solid var(--amber-300);
+  border-radius: 14px;
+  box-shadow: 0 4px 24px rgba(253,214,24,0.10);
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.report-card-featured:hover { transform: translateY(-3px); box-shadow: 0 10px 36px rgba(253,214,24,0.18); }
+.report-card-featured-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+.report-card-featured-left { padding: 2rem 2rem 2rem 2rem; border-right: 1px solid var(--gray-100); }
+.report-card-featured-right { padding: 2rem 2rem 2rem 2rem; background: var(--gray-50); }
+.report-featured-label { display: inline-block; background: var(--amber-300); color: var(--blue-900); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; padding: 3px 10px; border-radius: 20px; margin-bottom: .75rem; }
+.report-card-featured-title { font-family: var(--font-serif); font-size: 1.35rem; color: var(--blue-900); line-height: 1.3; margin-bottom: .75rem; }
+.report-card-featured-intro { font-size: 14px; font-weight: 300; color: var(--gray-500); line-height: 1.7; margin-bottom: 1.25rem; }
+.report-stats-list { list-style: none; padding: 0; margin: 0 0 1.5rem; display: flex; flex-direction: column; gap: .6rem; }
+.report-stats-list li { font-size: 13px; color: var(--gray-600); line-height: 1.6; padding-left: 1.2rem; position: relative; }
+.report-stats-list li::before { content: "▸"; position: absolute; left: 0; color: var(--amber-400); font-size: 11px; top: 2px; }
+.report-stats-list li strong { color: var(--blue-900); }
+.report-stat-source { font-size: 11px; color: var(--gray-400); font-style: italic; margin-top: .1rem; display: block; }
+.report-card-featured-right h4 { font-family: var(--font-serif); font-size: 1rem; color: var(--blue-900); margin: 0 0 .75rem; }
+.report-wes-list { list-style: none; padding: 0; margin: 0 0 1.25rem; display: flex; flex-direction: column; gap: .55rem; }
+.report-wes-list li { font-size: 13.5px; color: var(--gray-600); line-height: 1.6; padding-left: 1.5rem; position: relative; }
+.report-wes-list li::before { content: "✓"; position: absolute; left: 0; color: var(--blue-600); font-weight: 700; }
+.report-check-callout { background: var(--blue-900); color: var(--white); border-radius: 10px; padding: 1rem 1.25rem; margin-bottom: 1.25rem; }
+.report-check-callout p { font-size: 13px; line-height: 1.65; margin: 0; opacity: .92; }
+.report-check-callout strong { color: var(--amber-300); }
+@media (max-width: 680px) {
+  .report-card-featured-inner { grid-template-columns: 1fr; }
+  .report-card-featured-left { border-right: none; border-bottom: 1px solid var(--gray-100); }
+}
+.report-read-time { font-size: 11px; color: var(--gray-400); }
+.report-card-body { padding: 1rem 1.5rem 1.5rem; }
+.report-card-title {
+  font-family: var(--font-serif); font-size: 1.05rem;
+  color: var(--blue-900); line-height: 1.3; margin-bottom: 0.6rem;
+}
+.report-card-teaser {
+  font-size: 13.5px; font-weight: 300; color: var(--gray-500);
+  line-height: 1.7; margin-bottom: 1rem;
+}
+.report-card-link {
+  font-size: 13px; font-weight: 500; color: var(--blue-600);
+  text-decoration: none; display: inline-flex; align-items: center; gap: 4px;
+}
+.report-card-link:hover { color: var(--amber-600); }
+.report-cta-strip {
+  margin-top: 2rem;
+  background: var(--blue-900); border-radius: var(--r-xl);
+  padding: 1.75rem 2rem;
+  display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap;
+}
+.report-cta-text { font-size: 15px; color: var(--blue-100); line-height: 1.6; }
+.report-cta-text strong { color: var(--white); display: block; font-family: var(--font-serif); font-size: 1.05rem; margin-bottom: 4px; }
+.report-email-form { display: flex; gap: 8px; flex-wrap: wrap; }
+.report-email-input {
+  border: 1.5px solid rgba(255,255,255,0.2); border-radius: var(--r-md);
+  padding: 11px 18px; font-family: var(--font-body);
+  font-size: 14px; color: var(--white); background: rgba(255,255,255,0.08);
+  outline: none; transition: border-color 0.2s; width: 220px;
+}
+.report-email-input::placeholder { color: rgba(255,255,255,0.4); }
+.report-email-input:focus { border-color: var(--yellow-500); }
+.report-email-btn {
+  background: var(--yellow-500); color: var(--blue-900);
+  border: none; padding: 11px 22px; border-radius: var(--r-md);
+  font-family: var(--font-body); font-size: 14px; font-weight: 600;
+  cursor: pointer; transition: background 0.15s; white-space: nowrap;
+}
+.report-email-btn:hover { background: var(--yellow-400); }
+
+/* ── CONTACT ── */
+#contact { background: var(--gray-50); padding: 5rem 0; }
+#contact .section-inner { max-width: 1000px; margin: 0 auto; padding: 0 2.5rem; }
+.contact-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 5rem; align-items: start; margin-top: 2.5rem;
+}
+.contact-left { }
+.contact-tagline {
+  font-family: var(--font-serif);
+  font-size: 2rem; line-height: 1.25; color: var(--blue-900); margin-bottom: 1rem;
+}
+.contact-tagline em { font-style: italic; color: var(--blue-600); }
+.contact-sub { font-size: 15px; font-weight: 300; color: var(--gray-600); line-height: 1.75; margin-bottom: 1.75rem; }
+.contact-info { display: flex; flex-direction: column; gap: 10px; }
+.contact-info-row { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--gray-600); }
+.contact-info-row a { color: var(--blue-600); text-decoration: none; }
+.contact-info-row a:hover { color: var(--amber-600); }
+.contact-form { display: flex; flex-direction: column; gap: 1rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form-group { display: flex; flex-direction: column; gap: 5px; }
+label { font-size: 11.5px; font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase; color: var(--gray-500); }
+input, textarea, select {
+  border: 1.5px solid var(--gray-200); border-radius: var(--r-md);
+  padding: 11px 14px; font-family: var(--font-sans);
+  font-size: 14px; color: var(--gray-900); background: var(--white);
+  outline: none; transition: border-color 0.2s; width: 100%;
+}
+input:focus, textarea:focus, select:focus { border-color: var(--blue-400); }
+textarea { resize: vertical; min-height: 120px; }
+.form-submit {
+  background: var(--blue-600); color: var(--white);
+  border: none; padding: 14px 28px; border-radius: var(--r-md);
+  font-family: var(--font-body); font-size: 16px; font-weight: 600;
+  cursor: pointer; letter-spacing: 0.01em;
+  transition: background 0.15s; align-self: flex-start;
+}
+.form-submit:hover { background: var(--blue-500); }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--blue-900);
+  padding: 2.5rem;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 1rem;
+}
+.footer-logo {
+  font-family: var(--font-serif);
+  font-size: 16px; color: var(--white);
+}
+.footer-logo span { color: var(--amber-300); }
+.footer-links { display: flex; gap: 1.5rem; }
+.footer-links a { font-size: 13px; color: var(--blue-200); text-decoration: none; }
+.footer-links a:hover { color: var(--amber-300); }
+.footer-copy { font-size: 12px; color: rgba(255,255,255,0.3); }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-inner > * {
+  opacity: 0; animation: fadeUp 0.65s ease forwards;
+}
+.hero-inner > *:nth-child(1) { animation-delay: 0.1s; }
+.hero-inner > *:nth-child(2) { animation-delay: 0.2s; }
+.hero-inner > *:nth-child(3) { animation-delay: 0.35s; }
+.hero-inner > *:nth-child(4) { animation-delay: 0.5s; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 860px) {
+  nav { padding: 0 1.5rem; }
+  .nav-links { display: none; }
+  .hero { padding: 100px 1.5rem 60px; }
+  .stats-bar { grid-template-columns: repeat(2, 1fr); padding: 1.5rem; }
+  .stat-item + .stat-item { border-left: none; }
+  .stat-item:nth-child(2n+1) { border-right: 1px solid rgba(255,255,255,0.1); }
+  .section { padding: 3.5rem 1.5rem; }
+  .section-full .section-inner { padding: 0 1.5rem; }
+  #about .section-inner, #demo .section-inner, #process .section-inner,
+  #contact .section-inner { padding: 0 1.5rem; }
+  #about, #demo, #process, #contact { padding: 3.5rem 0; }
+  .about-grid, .demo-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .services-grid { grid-template-columns: 1fr; }
+  .process-steps { grid-template-columns: 1fr; }
+  .process-step { border-right: none; border-bottom: 1px solid var(--gray-200); }
+  .portfolio-grid { grid-template-columns: 1fr; }
+  footer { flex-direction: column; text-align: center; padding: 2rem 1.5rem; }
+  .footer-links { justify-content: center; }
+  .demo-preview { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ICON SPRITE (stroke-based, brand-colored via currentColor) -->
+<svg class="icon-sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <defs></defs>
+  <symbol id="i-grad" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.94 14.06A2 2 0 0 0 8.5 12.62l-5.62-1.45a.5.5 0 0 1 0-.96L8.5 8.76a2 2 0 0 0 1.44-1.44l1.45-5.62a.5.5 0 0 1 .96 0l1.45 5.62a2 2 0 0 0 1.44 1.44l5.62 1.45a.5.5 0 0 1 0 .96l-5.62 1.45a2 2 0 0 0-1.44 1.44l-1.45 5.62a.5.5 0 0 1-.96 0z"/><path d="M20 3v4M22 5h-4M4 17v2M5 18H3"/></symbol>
+  <symbol id="i-blocks" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="7" x="14" y="3" rx="1"/><path d="M10 21V8a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h16"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="i-ruler" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/><path d="m14.5 12.5 2-2M11.5 9.5l2-2M8.5 6.5l2-2M17.5 15.5l2-2"/></symbol>
+  <symbol id="i-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-scale" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10M12 3v18M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></symbol>
+  <symbol id="i-device" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></symbol>
+  <symbol id="i-monitor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></symbol>
+  <symbol id="i-wrench" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+  <symbol id="i-pen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></symbol>
+  <symbol id="i-palette" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></symbol>
+  <symbol id="i-trending" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></symbol>
+  <symbol id="i-gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></symbol>
+  <symbol id="i-dollar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></symbol>
+</svg>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-icon"><svg class="ico" width="20" height="20"><use href="#i-grad"/></svg></div>
+    <div class="nav-logo-text">
+      <div class="nav-logo-name">Web Education Services</div>
+      <div class="nav-logo-sub">Dr. Rachelle Babcock, D.Ed.</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#ai-focus">AI Training</a></li>
+    <li><a href="#lms">Custom LMS</a></li>
+    <li><a href="#demo">Live Demo</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#wes-report">The WES Report</a></li>
+    <li><a href="#contact" class="nav-cta">Work With Me</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Instructional Designer · AI Integration Specialist · D.Ed.</div>
+    <h1>Better training.<br>Smarter teams.<br><em>AI that actually gets used.</em></h1>
+    <p class="hero-sub">Dr. Rachelle Babcock builds engaging, results-driven learning experiences — and teaches your employees how to use AI tools effectively and ethically so your whole organization works smarter. From custom LMS platforms to AI integration training, everything is designed, built, and deployed end-to-end. One expert. No handoffs. Real results.</p>
+    <div class="hero-actions">
+      <a href="#portfolio" class="btn-primary">See My Work →</a>
+      <a href="demo.html" target="_blank" class="btn-outline-white">View Live Demo ↗</a>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:2rem;">
+      <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:var(--blue-100);font-size:12.5px;padding:6px 14px;border-radius:100px;"><svg class="ico" width="15" height="15"><use href="#i-grad"/></svg> Course Development</div>
+      <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(253,214,24,0.15);border:1px solid rgba(253,214,24,0.3);color:var(--yellow-500);font-size:12.5px;padding:6px 14px;border-radius:100px;"><svg class="ico" width="15" height="15"><use href="#i-spark"/></svg> AI Integration Training</div>
+      <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:var(--blue-100);font-size:12.5px;padding:6px 14px;border-radius:100px;"><svg class="ico" width="15" height="15"><use href="#i-blocks"/></svg> Custom LMS Builds</div>
+      <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:var(--blue-100);font-size:12.5px;padding:6px 14px;border-radius:100px;"><svg class="ico" width="15" height="15"><use href="#i-chart"/></svg> Real-Time Analytics</div>
+    </div>
+  </div>
+</div>
+
+<!-- STATS BAR -->
+<div style="background: var(--blue-800);">
+  <div class="stats-bar">
+    <div class="stat-item">
+      <div class="stat-n">15<span>+</span></div>
+      <div class="stat-label">Years in education &amp; design</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-n">150<span>+</span></div>
+      <div class="stat-label">Courses designed &amp; built</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-n">D<span>.</span>Ed<span>.</span></div>
+      <div class="stat-label">Doctorate in Education</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-n">100<span>%</span></div>
+      <div class="stat-label">End-to-end ownership</div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div id="about">
+  <div class="section-inner">
+    <div class="eyebrow">About</div>
+    <h2 class="section-title">Why I Do This Work</h2>
+    <div class="about-grid">
+      <div class="about-left">
+        <div class="about-photo-wrap">
+          <img src="rachelle.jpg" alt="Dr. Rachelle Babcock" class="about-photo" />
+          <div class="about-photo-info">
+            <div class="about-photo-name">Dr. Rachelle Babcock</div>
+            <div class="about-photo-cred">D.Ed. · Instructional Designer &amp; Developer</div>
+            <div class="about-photo-cred">New Port Richey, FL · Available Remotely</div>
+          </div>
+        </div>
+        <blockquote>"Learning design isn't about making slides. It's about changing what people can do."</blockquote>
+        <div class="about-body">
+          <p>I'm Dr. Rachelle Babcock — a Doctor of Education with years of hands-on experience designing learning for organizations that want real results, not just course completions. I oversee every project from initial needs analysis to final deployment, so there's one person accountable and no gaps between strategy and execution.</p>
+          <p>I work with corporate training teams, higher education institutions, nonprofits, and small businesses who need learning that's beautifully designed <em>and</em> genuinely effective. Based in New Port Richey, FL — available remotely worldwide.</p>
+        </div>
+      </div>
+      <div class="about-right">
+        <div class="principle">
+          <div class="principle-icon"><svg class="ico" width="18" height="18"><use href="#i-target"/></svg></div>
+          <div>
+            <strong>Outcomes first</strong>
+            <span>Every design decision traces back to a measurable learning objective. No fluff, no filler.</span>
+          </div>
+        </div>
+        <div class="principle">
+          <div class="principle-icon"><svg class="ico" width="18" height="18"><use href="#i-users"/></svg></div>
+          <div>
+            <strong>Collaborative by default</strong>
+            <span>Your subject matter experts know the content. I know how to turn it into learning. We make it work together.</span>
+          </div>
+        </div>
+        <div class="principle">
+          <div class="principle-icon"><svg class="ico" width="18" height="18"><use href="#i-ruler"/></svg></div>
+          <div>
+            <strong>Design that earns attention</strong>
+            <span>Learners are busy. I build courses that respect their time and keep them engaged without gimmicks.</span>
+          </div>
+        </div>
+        <div class="principle">
+          <div class="principle-icon"><svg class="ico" width="18" height="18"><use href="#i-zap"/></svg></div>
+          <div>
+            <strong>Deadlines are real</strong>
+            <span>You'll have a clear schedule from kickoff and I'll stick to it. No surprises.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services" class="section">
+  <div class="eyebrow">Services &amp; Expertise</div>
+  <h2 class="section-title">Tools &amp; Platforms I Work In</h2>
+  <p class="section-lead">From rapid eLearning to full LMS deployments — I work in the tools your team already uses.</p>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon"><svg class="ico"><use href="#i-target"/></svg></div>
+      <div class="service-name">Articulate Storyline 360</div>
+      <div class="service-desc">Fully interactive, branching courses with custom animations, variables, and triggers. Ideal for complex simulations and compliance training.</div>
+      <div class="service-tags">
+        <span class="tag">Branching</span>
+        <span class="tag">Simulations</span>
+        <span class="tag">SCORM</span>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><svg class="ico"><use href="#i-device"/></svg></div>
+      <div class="service-name">Articulate Rise 360</div>
+      <div class="service-desc">Responsive, mobile-first courses built fast. Polished, modern look with drag-and-drop building blocks. Great for onboarding and product training.</div>
+      <div class="service-tags">
+        <span class="tag">Mobile-first</span>
+        <span class="tag">Rapid build</span>
+        <span class="tag">SCORM</span>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><svg class="ico"><use href="#i-monitor"/></svg></div>
+      <div class="service-name">Canvas LMS</div>
+      <div class="service-desc">Full course builds within Canvas — structured modules, assignments, rubrics, discussion boards, and third-party integrations.</div>
+      <div class="service-tags">
+        <span class="tag">LMS</span>
+        <span class="tag">Higher Ed</span>
+        <span class="tag">Corporate</span>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><svg class="ico"><use href="#i-chart"/></svg></div>
+      <div class="service-name">Google Slides</div>
+      <div class="service-desc">Budget-friendly, shareable training decks and job aids. Perfect for small teams or quick-deploy microlearning content.</div>
+      <div class="service-tags">
+        <span class="tag">Microlearning</span>
+        <span class="tag">Job Aids</span>
+        <span class="tag">Low Cost</span>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><svg class="ico"><use href="#i-wrench"/></svg></div>
+      <div class="service-name">Moodle &amp; Other LMS</div>
+      <div class="service-desc">Course setup, theming, and content deployment across a variety of learning management systems beyond Canvas.</div>
+      <div class="service-tags">
+        <span class="tag">Moodle</span>
+        <span class="tag">Blackboard</span>
+        <span class="tag">Reach 360</span>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><svg class="ico"><use href="#i-pen"/></svg></div>
+      <div class="service-name">Curriculum &amp; Content Writing</div>
+      <div class="service-desc">Script writing, storyboarding, learning objective mapping, and full curriculum design — the instructional strategy that makes everything else work.</div>
+      <div class="service-tags">
+        <span class="tag amber">Storyboarding</span>
+        <span class="tag amber">ADDIE</span>
+        <span class="tag amber">SAM</span>
+        <span class="tag amber">Bloom's</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI FOCUS -->
+<div id="ai-focus">
+  <div class="section-inner">
+    <div class="ai-focus-badge"><svg class="ico" width="15" height="15"><use href="#i-spark"/></svg> AI Integration Specialist</div>
+    <div class="ai-focus-grid">
+      <div class="ai-focus-left">
+        <h2 class="ai-focus-headline">I Don't Just Build Courses.<br><em>I Teach Your Team to Work Smarter with AI.</em></h2>
+        <p class="ai-focus-body">AI is reshaping every industry — including yours. My core focus isn't just designing great training. It's helping businesses and their employees understand how to use AI tools effectively, efficiently, and ethically so they can do more with less effort and stay ahead of what's coming.</p>
+        <ul class="ai-pillar-list">
+          <li class="ai-pillar">
+            <div class="ai-pillar-icon"><svg class="ico" width="18" height="18"><use href="#i-zap"/></svg></div>
+            <div>
+              <strong>AI for Productivity</strong>
+              <span>I build training that shows your team exactly which AI tools apply to their daily work — and how to use them to cut hours off their week without cutting corners.</span>
+            </div>
+          </li>
+          <li class="ai-pillar">
+            <div class="ai-pillar-icon"><svg class="ico" width="18" height="18"><use href="#i-target"/></svg></div>
+            <div>
+              <strong>AI for Content Creation</strong>
+              <span>From drafting communications to building internal documents, your employees will learn how to use AI as a production tool — not a replacement for their thinking, but an accelerator of it.</span>
+            </div>
+          </li>
+          <li class="ai-pillar">
+            <div class="ai-pillar-icon"><svg class="ico" width="18" height="18"><use href="#i-shield"/></svg></div>
+            <div>
+              <strong>Ethical AI Use</strong>
+              <span>Speed without guardrails creates risk. Every AI training I build includes clear guidance on data privacy, accuracy verification, bias awareness, and responsible use in the workplace.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="ai-focus-right">
+        <div class="ai-stat-row">
+          <div class="ai-stat">
+            <div class="ai-stat-num">77%</div>
+            <div class="ai-stat-label">of employees say they have no formal AI training at work</div>
+          </div>
+          <div class="ai-stat">
+            <div class="ai-stat-num">4×</div>
+            <div class="ai-stat-label">more productive when employees know how to use AI effectively</div>
+          </div>
+          <div class="ai-stat">
+            <div class="ai-stat-num">62%</div>
+            <div class="ai-stat-label">of workers already use AI tools — with or without employer guidance</div>
+          </div>
+          <div class="ai-stat">
+            <div class="ai-stat-num">2025</div>
+            <div class="ai-stat-label">the year AI literacy became a core workplace skill</div>
+          </div>
+        </div>
+        <div class="ai-quote">"The question is no longer whether your employees will use AI. It's whether they'll know how to use it well — and safely."</div>
+        <div class="ai-ethics-tag"><svg class="ico" width="15" height="15"><use href="#i-scale"/></svg> Ethics-First Approach</div>
+        <p class="ai-ethics-body">Every AI training program I design covers not just the how, but the why — responsible use, privacy boundaries, when to trust AI output and when to question it. Your team will leave informed, not just impressed.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CUSTOM LMS -->
+<div id="lms">
+  <div class="section-inner" style="padding-top: 5rem; padding-bottom: 5rem;">
+    <div class="eyebrow">Custom Solutions</div>
+    <h2 class="section-title">Learning Systems Built for <em style="font-style:italic;color:var(--amber-300);">Small Businesses</em></h2>
+    <p class="section-lead">Off-the-shelf platforms are fine — until they're not. When your organization needs a learning ecosystem that fits your workflows, your brand, and your people, I design and build it from the ground up.</p>
+    <div class="lms-grid">
+      <div class="lms-features">
+        <div class="lms-feat">
+          <div class="lms-feat-icon navy"><svg class="ico" width="20" height="20"><use href="#i-blocks"/></svg></div>
+          <div>
+            <div class="lms-feat-title">End-to-End Build &amp; Deployment</div>
+            <div class="lms-feat-desc">From architecture and design to hosting, configuration, and go-live — I handle every layer. One point of contact, zero handoff chaos.</div>
+          </div>
+        </div>
+        <div class="lms-feat">
+          <div class="lms-feat-icon amber"><svg class="ico" width="20" height="20"><use href="#i-link"/></svg></div>
+          <div>
+            <div class="lms-feat-title">Seamless Integrations</div>
+            <div class="lms-feat-desc">SCORM, xAPI, HRIS systems, SSO, Zoom, Salesforce — your platform connects to the tools your team already uses so learning fits into the day instead of interrupting it.</div>
+          </div>
+        </div>
+        <div class="lms-feat">
+          <div class="lms-feat-icon navy"><svg class="ico" width="20" height="20"><use href="#i-palette"/></svg></div>
+          <div>
+            <div class="lms-feat-title">Fully Branded to Your Organization</div>
+            <div class="lms-feat-desc">Your logo, your colors, your voice throughout. The experience feels like yours — not a generic template your employees can tell you bought off a shelf.</div>
+          </div>
+        </div>
+        <div class="lms-feat">
+          <div class="lms-feat-icon amber"><svg class="ico" width="20" height="20"><use href="#i-shield"/></svg></div>
+          <div>
+            <div class="lms-feat-title">Ongoing Support &amp; Continuous Improvement</div>
+            <div class="lms-feat-desc">Launch day is just the beginning. I provide hands-on support — updates, new content, user management, and performance reviews — so your platform keeps growing with your organization.</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div style="margin-bottom:1.25rem;">
+          <div style="font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--yellow-500);margin-bottom:0.6rem;"><svg class="ico" width="14" height="14"><use href="#i-chart"/></svg> Real-Time Analytics</div>
+          <p style="font-size:14px;color:var(--blue-100);line-height:1.75;margin-bottom:1rem;">Most onboarding ends with a checkbox. Mine ends with a clear picture of what each employee actually learned — and where they need more support.</p>
+          <ul class="analytics-insight-list">
+            <li>See which questions employees answered wrong and how many tries it took</li>
+            <li>Track time per section to spot where learners disengaged or got stuck</li>
+            <li>Identify knowledge gaps before they become performance problems on the job</li>
+            <li>Get plain-English flags so managers know exactly what follow-up conversation to have</li>
+            <li>Monitor completion rates, quiz scores, and engagement trends in one dashboard</li>
+            <li>Generate printable certificates for HR files and compliance records</li>
+          </ul>
+        </div>
+        <div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:1.25rem;">
+          <div style="font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--yellow-500);margin-bottom:0.6rem;"><svg class="ico" width="14" height="14"><use href="#i-dollar"/></svg> Simple, Affordable Hosting</div>
+          <p style="font-size:14px;color:var(--blue-100);line-height:1.75;">Your program is hosted for a low monthly fee that includes IT support as needed — so if something breaks, you have someone to call. No enterprise contracts, no per-seat pricing. Just a reliable link you send to every new hire.</p>
+        </div>
+      </div>
+    </div>
+    <div class="lms-banner">
+      <div class="lms-banner-text">Ready to stop guessing and start knowing<br>how your onboarding is actually performing?</div>
+      <a href="#contact" class="lms-banner-btn">Let's Build It →</a>
+    </div>
+  </div>
+</div>
+
+<!-- LIVE DEMO CTA -->
+<div id="demo">
+  <div class="section-inner">
+    <div class="demo-grid">
+      <div class="demo-left">
+        <div class="eyebrow">See It In Action</div>
+        <h2 class="section-title">A 40-page handbook transformed into a <em>45-minute experience</em></h2>
+        <p class="section-lead">This live demo shows exactly what I build — a fully interactive onboarding program with quizzes, drag-and-drop activities, AI coaching, a branded certificate, and a real-time analytics dashboard.</p>
+        <ul class="demo-features">
+          <li>Interactive module with scenario-based learning</li>
+          <li>Knowledge checks with instant feedback</li>
+          <li>AI workplace coaching activity</li>
+          <li>Printable certificate of completion</li>
+          <li>Live analytics &amp; struggle detection</li>
+          <li>No LMS subscription required</li>
+        </ul>
+        <div class="demo-cta-row">
+          <a href="demo.html" target="_blank" class="btn-primary">Open Live Demo ↗</a>
+          <a href="#contact" class="btn-outline-white">Get One Built →</a>
+        </div>
+      </div>
+      <div class="demo-preview">
+        <div class="demo-browser-bar">
+          <div class="dot red"></div>
+          <div class="dot yellow"></div>
+          <div class="dot green"></div>
+          <div class="demo-browser-url">webeducationservices.com/demo</div>
+        </div>
+        <div class="demo-tabs">
+          <div class="demo-tab active"><svg class="ico" width="13" height="13"><use href="#i-home"/></svg> Dashboard</div>
+          <div class="demo-tab"><svg class="ico" width="13" height="13"><use href="#i-book"/></svg> Module</div>
+          <div class="demo-tab"><svg class="ico" width="13" height="13"><use href="#i-spark"/></svg> AI Lab</div>
+          <div class="demo-tab"><svg class="ico" width="13" height="13"><use href="#i-chart"/></svg> Analytics</div>
+        </div>
+        <div class="demo-screen-items">
+          <div class="demo-screen-row">
+            <div class="demo-screen-dot done"></div>
+            <div class="demo-screen-text">Welcome Dashboard</div>
+            <div class="demo-screen-bar"><div class="demo-screen-fill" style="width:100%;background:#10B981;"></div></div>
+          </div>
+          <div class="demo-screen-row">
+            <div class="demo-screen-dot active"></div>
+            <div class="demo-screen-text">Respect in the Workplace</div>
+            <div class="demo-screen-bar"><div class="demo-screen-fill" style="width:60%;background:#FDD618;"></div></div>
+          </div>
+          <div class="demo-screen-row">
+            <div class="demo-screen-dot todo"></div>
+            <div class="demo-screen-text">AI Lab</div>
+            <div class="demo-screen-bar"><div class="demo-screen-fill" style="width:0%;"></div></div>
+          </div>
+          <div class="demo-screen-row">
+            <div class="demo-screen-dot todo"></div>
+            <div class="demo-screen-text">Certificate</div>
+            <div class="demo-screen-bar"><div class="demo-screen-fill" style="width:0%;"></div></div>
+          </div>
+          <div style="margin-top:0.75rem;padding:0.75rem;background:rgba(253,214,24,0.12);border-radius:8px;border:1px solid rgba(253,214,24,0.25);">
+            <div style="font-size:12px;color:var(--yellow-500);font-weight:500;margin-bottom:4px;display:flex;align-items:center;gap:5px;"><svg class="ico" width="13" height="13"><use href="#i-chart"/></svg> Live Analytics</div>
+            <div style="display:flex;gap:1rem;">
+              <div style="text-align:center;">
+                <div style="font-size:20px;font-weight:500;color:var(--white);">72%</div>
+                <div style="font-size:10px;color:var(--blue-200);">Complete</div>
+              </div>
+              <div style="text-align:center;">
+                <div style="font-size:20px;font-weight:500;color:var(--white);">12m</div>
+                <div style="font-size:10px;color:var(--blue-200);">Time Spent</div>
+              </div>
+              <div style="text-align:center;">
+                <div style="font-size:20px;font-weight:500;color:var(--white);">80%</div>
+                <div style="font-size:10px;color:var(--blue-200);">Quiz Score</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROCESS -->
+<div id="process">
+  <div class="section-inner" style="padding-top: 5rem; padding-bottom: 5rem;">
+    <div class="eyebrow">How I Work</div>
+    <h2 class="section-title">From Brief to Launch</h2>
+    <p class="section-lead">A proven process that keeps projects on time, on budget, and on target.</p>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-num">01</div>
+        <div class="step-name">Discover</div>
+        <div class="step-desc">Deep dive into your goals, audience, existing content, and constraints. We align on scope before a single slide is built.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">02</div>
+        <div class="step-name">Design</div>
+        <div class="step-desc">Storyboards, learning objectives mapped to Bloom's Taxonomy, and a visual prototype for sign-off before full development.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">03</div>
+        <div class="step-name">Develop</div>
+        <div class="step-desc">Full course build in your chosen platform — interactivity, media, assessments, and SCORM packaging included.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">04</div>
+        <div class="step-name">Review</div>
+        <div class="step-desc">Structured review rounds with clear revision cycles. You get a live preview link for stakeholder feedback.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">05</div>
+        <div class="step-name">Launch</div>
+        <div class="step-desc">Final QA, LMS upload support, and a 30-day post-launch check-in to ensure everything runs smoothly.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PORTFOLIO -->
+<section id="portfolio" class="section">
+  <div class="eyebrow">Portfolio</div>
+  <h2 class="section-title">Selected Projects</h2>
+  <p class="section-lead">A sample of recent work across industries and tools. Full case studies available on request.</p>
+  <div class="portfolio-grid">
+    <div class="project-card">
+      <div class="project-thumb pt-1">
+        <svg class="ico" width="44" height="44"><use href="#i-target"/></svg>
+        <span class="thumb-label">Articulate Storyline 360</span>
+      </div>
+      <div class="project-body">
+        <div class="project-name">Compliance Training — Healthcare Onboarding</div>
+        <div class="project-desc">Branching scenario-based course with custom characters, SCORM tracking, and 92% completion in pilot.</div>
+        <a href="https://www.webeducationservices.com/instructional-design-projects#ProjectPortfolio-Articulate360" target="_blank" class="project-link">View Project ↗</a>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-thumb pt-2">
+        <svg class="ico" width="44" height="44"><use href="#i-device"/></svg>
+        <span class="thumb-label">Articulate Rise 360</span>
+      </div>
+      <div class="project-body">
+        <div class="project-name">New Employee Orientation — Tech Sector</div>
+        <div class="project-desc">Responsive Rise course for mobile-first learners with embedded videos, knowledge checks, and a resource library.</div>
+        <a href="https://www.webeducationservices.com/instructional-design-projects#ArticulateRise" target="_blank" class="project-link">View Project ↗</a>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-thumb pt-3">
+        <svg class="ico" width="44" height="44"><use href="#i-monitor"/></svg>
+        <span class="thumb-label">Canvas LMS</span>
+      </div>
+      <div class="project-body">
+        <div class="project-name">Graduate Certificate Program — 6 Modules</div>
+        <div class="project-desc">Complete course architecture in Canvas with rubrics, discussion forums, video lectures, and automated grade passback.</div>
+        <a href="https://www.webeducationservices.com/instructional-design-projects#Canvas" target="_blank" class="project-link">View Project ↗</a>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-thumb pt-4">
+        <svg class="ico" width="44" height="44"><use href="#i-chart"/></svg>
+        <span class="thumb-label">Google Slides</span>
+      </div>
+      <div class="project-body">
+        <div class="project-name">Sales Enablement Deck Series</div>
+        <div class="project-desc">12-part microlearning series for a distributed sales team — shareable, trackable, easy for managers to update.</div>
+        <a href="https://www.webeducationservices.com/instructional-design-projects#ProjectPortfolio-GoogleSlides" target="_blank" class="project-link">View Project ↗</a>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-thumb pt-1" style="background: linear-gradient(135deg, #0570B0, #1A9FE0);">
+        <svg class="ico" width="44" height="44"><use href="#i-code"/></svg>
+        <span class="thumb-label">Interactive HTML</span>
+      </div>
+      <div class="project-body">
+        <div class="project-name">New Employee Success — Onboarding Program</div>
+        <div class="project-desc">45-minute interactive onboarding with quizzes, AI coaching, live analytics, and a branded completion certificate.</div>
+        <a href="demo.html" target="_blank" class="project-link">View Live Demo ↗</a>
+      </div>
+    </div>
+    <div class="project-cta">
+      <div style="margin-bottom: 0.75rem; color: var(--blue-600);"><svg class="ico" width="30" height="30"><use href="#i-mail"/></svg></div>
+      <div class="project-name" style="margin-bottom: 5px;">Your Project Here</div>
+      <div class="project-desc">Looking for a custom learning solution? Let's talk about what you need.</div>
+      <a href="#contact" class="project-link" style="margin-top: 0.5rem;">Start a Conversation →</a>
+    </div>
+  </div>
+</section>
+
+<!-- WES REPORT -->
+<div id="wes-report">
+  <div class="section-inner">
+    <div class="report-header">
+      <div class="report-title-block">
+        <div class="eyebrow">Blog &amp; Insights</div>
+        <div class="report-name">The WES <span>Report</span></div>
+        <div class="report-tagline">AI, emerging tools, and what's changing the way people learn at work — so your training never falls behind.</div>
+      </div>
+      <a href="#wes-report" class="report-subscribe">Get New Issues →</a>
+    </div>
+    <div class="report-grid">
+
+      <!-- FEATURED ARTICLE -->
+      <div class="report-card-featured">
+        <div class="report-card-featured-inner">
+          <div class="report-card-featured-left">
+            <span class="report-featured-label"><svg class="ico" width="11" height="11"><use href="#i-star"/></svg> Featured Article</span>
+            <div class="report-card-header" style="padding:0 0 .75rem; border:none;">
+              <span class="report-category cat-risk"><svg class="ico"><use href="#i-alert"/></svg> AI Risk &amp; Training</span>
+              <span class="report-read-time">8 min read</span>
+            </div>
+            <div class="report-card-featured-title">Untrained on AI? Your Employees Are Already Making Costly Mistakes.</div>
+            <div class="report-card-featured-intro">AI tools are now embedded in daily work across nearly every industry — but most organizations have deployed them without providing any structured training on how to use them correctly. The result is a growing pattern of errors, blind trust, and liability exposure that research is beginning to quantify in alarming detail.</div>
+
+            <h4 style="font-family:var(--font-serif);font-size:.9rem;color:var(--blue-900);margin:0 0 .6rem;">What the Research Shows</h4>
+            <ul class="report-stats-list">
+              <li>
+                <strong>Over-reliance is the #1 AI risk in the workplace.</strong> A 2024 Microsoft &amp; LinkedIn Work Trend Index found that 78% of AI users bring their own tools to work — often without any organizational guidance — and that employees who over-trust AI output are significantly more likely to propagate errors without review.
+                <span class="report-stat-source">Source: Microsoft/LinkedIn Work Trend Index Annual Report, 2024</span>
+              </li>
+              <li>
+                <strong>AI "hallucinations" are causing real-world errors.</strong> Stanford HAI research found that large language models produce confidently-stated but factually incorrect information in 3–27% of responses depending on the task domain — a rate most employees are completely unaware of.
+                <span class="report-stat-source">Source: Stanford Human-Centered AI (HAI) Institute, 2023–2024</span>
+              </li>
+              <li>
+                <strong>Only 14% of employees have received formal AI training.</strong> Despite rapid adoption, a Salesforce survey of 14,000 workers found that just 1 in 7 have been given any structured guidance on AI use at work — leaving the vast majority to form their own (often incorrect) assumptions about accuracy and reliability.
+                <span class="report-stat-source">Source: Salesforce "Generative AI Snapshot Research Series," 2023</span>
+              </li>
+              <li>
+                <strong>Errors from over-reliance cost organizations significantly.</strong> A 2023 Gartner report estimated that by 2025, poor-quality AI output — including unchecked AI-generated content used in business decisions — will cost organizations an average of $13 million per year in remediation and rework.
+                <span class="report-stat-source">Source: Gartner, "Innovation Insight: AI Trust, Risk and Security Management," 2023</span>
+              </li>
+              <li>
+                <strong>Employees trained on AI ethics and verification make fewer errors.</strong> A University of Michigan study found that workers who received structured training on AI limitations and verification habits were 34% less likely to act on incorrect AI output compared to untrained peers.
+                <span class="report-stat-source">Source: University of Michigan School of Information, 2023</span>
+              </li>
+            </ul>
+            <a href="#contact" class="report-card-link" style="font-size:14px;">Talk to Dr. Babcock About AI Training for Your Team →</a>
+          </div>
+
+          <div class="report-card-featured-right">
+            <h4>The Right Way to Train Employees on AI</h4>
+            <p style="font-size:13px;color:var(--gray-500);line-height:1.65;margin:0 0 1rem;">Effective AI training isn't about telling employees to stop using it — it's about teaching them <em>when to trust it, when to question it, and always how to verify it.</em> Here's how WES approaches this:</p>
+
+            <ul class="report-wes-list">
+              <li><strong>AI Literacy First.</strong> Before any tool training, employees learn what AI actually is — including what it can and cannot do, how it generates output, and why confident-sounding answers are not the same as accurate ones.</li>
+              <li><strong>Use-Case-Specific Guidance.</strong> WES builds training tailored to <em>your</em> tools and workflows — so employees learn the right way to use the specific AI features in their daily roles, not generic AI theory.</li>
+              <li><strong>Verification Habits Built In.</strong> Every WES AI training module includes explicit checkpoints: when to fact-check, where to cross-reference, and how to recognize red flags in AI output before acting on it.</li>
+              <li><strong>Ethical AI Use Frameworks.</strong> Employees learn how to handle sensitive data with AI, understand copyright and privacy boundaries, and apply your organization's acceptable-use policy — not just best guesses.</li>
+              <li><strong>Ongoing Reinforcement.</strong> AI tools change fast. WES designs training that includes update cycles, so employees aren't learning on outdated assumptions as models evolve.</li>
+            </ul>
+
+            <div class="report-check-callout">
+              <p><strong>Know when to check. Know when to trust.</strong><br><br>
+              The biggest AI mistake isn't using it — it's using it without understanding its limits. WES teaches your team a simple, repeatable habit: <em>use AI to accelerate, verify before you act, and never skip human judgment on high-stakes output.</em> That one shift dramatically reduces errors, liability, and the costly rework that follows unchecked AI use.</p>
+            </div>
+
+            <a href="#contact" class="btn btn-primary" style="display:inline-block;font-size:14px;padding:.65rem 1.5rem;">Build AI Training for My Team →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="report-card">
+        <div class="report-card-header">
+          <span class="report-category cat-ai"><svg class="ico"><use href="#i-spark"/></svg> AI in Training</span>
+          <span class="report-read-time">5 min read</span>
+        </div>
+        <div class="report-card-body">
+          <div class="report-card-title">Your Employees Already Use AI. Your Training Should Too.</div>
+          <div class="report-card-teaser">AI tools like ChatGPT are already sitting in your employees' workflow — whether you've sanctioned them or not. The organizations winning right now aren't banning AI from training. They're building it in. Here's how to use AI as a coaching tool inside your onboarding and compliance programs.</div>
+          <a href="#contact" class="report-card-link">Read More →</a>
+        </div>
+      </div>
+
+      <div class="report-card">
+        <div class="report-card-header">
+          <span class="report-category cat-trends"><svg class="ico"><use href="#i-trending"/></svg> Trends</span>
+          <span class="report-read-time">4 min read</span>
+        </div>
+        <div class="report-card-body">
+          <div class="report-card-title">The Death of the Click-Through Compliance Course</div>
+          <div class="report-card-teaser">Employees have been clicking "Next" through mandatory training for two decades. AI-powered analytics now show us what we always suspected — completion rates mean almost nothing. We break down what organizations are replacing checkbox training with, and why it's working.</div>
+          <a href="#contact" class="report-card-link">Read More →</a>
+        </div>
+      </div>
+
+      <div class="report-card">
+        <div class="report-card-header">
+          <span class="report-category cat-strategy"><svg class="ico"><use href="#i-target"/></svg> Strategy</span>
+          <span class="report-read-time">6 min read</span>
+        </div>
+        <div class="report-card-body">
+          <div class="report-card-title">What Your Onboarding Data Is Actually Telling You</div>
+          <div class="report-card-teaser">Most small businesses know their new hire completion rate. Almost none know which module caused the most wrong answers, where employees disengaged, or which knowledge gaps predicted poor 90-day performance. AI-driven learning analytics are changing that — and you don't need an enterprise LMS to access them.</div>
+          <a href="#contact" class="report-card-link">Read More →</a>
+        </div>
+      </div>
+
+      <div class="report-card">
+        <div class="report-card-header">
+          <span class="report-category cat-tools"><svg class="ico"><use href="#i-gear"/></svg> Tools</span>
+          <span class="report-read-time">5 min read</span>
+        </div>
+        <div class="report-card-body">
+          <div class="report-card-title">Microlearning + AI: The Combination Replacing Hour-Long Training Videos</div>
+          <div class="report-card-teaser">Research is clear — people retain more from short, focused bursts of learning than from long passive sessions. Pair that with AI that adapts content based on how each learner is actually performing, and you have a training model that's faster, cheaper, and dramatically more effective than anything a one-size-fits-all video can offer.</div>
+          <a href="#contact" class="report-card-link">Read More →</a>
+        </div>
+      </div>
+
+    </div>
+    <div class="report-cta-strip">
+      <div class="report-cta-text">
+        <strong>Get The WES Report in your inbox.</strong>
+        New issues cover AI tools, instructional design trends, and practical strategies you can apply to your training programs right away.
+      </div>
+      <form class="report-email-form" onsubmit="handleReportSignup(event)">
+        <input type="email" class="report-email-input" placeholder="your@email.com" required id="report-email" />
+        <button type="submit" class="report-email-btn">Subscribe →</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div id="contact">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div class="contact-left">
+        <div class="eyebrow">Work With Me</div>
+        <div class="contact-tagline">Let's build something<br><em>worth learning.</em></div>
+        <p class="contact-sub">Whether you have a fully-scoped project or just an idea, I'd love to hear about it. Fill out the form and I'll get back to you within 1 business day.</p>
+        <div class="contact-info">
+          <div class="contact-info-row"><svg class="ico" width="16" height="16"><use href="#i-pin"/></svg> New Port Richey, FL · Available remotely worldwide</div>
+          <div class="contact-info-row"><svg class="ico" width="16" height="16"><use href="#i-phone"/></svg> <a href="tel:7272226984">727.222.6984</a></div>
+          <div class="contact-info-row"><svg class="ico" width="16" height="16"><use href="#i-mail"/></svg> <a href="mailto:rachelle@webeducationservices.com">rachelle@webeducationservices.com</a></div>
+          <div class="contact-info-row"><svg class="ico" width="16" height="16"><use href="#i-globe"/></svg> <a href="https://www.webeducationservices.com" target="_blank">webeducationservices.com</a></div>
+        </div>
+      </div>
+      <form class="contact-form" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" placeholder="Jane Smith" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="jane@company.com" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="org">Organization / Company</label>
+          <input type="text" id="org" placeholder="Acme Corp" />
+        </div>
+        <div class="form-group">
+          <label for="tool">Preferred Tool (if known)</label>
+          <select id="tool">
+            <option value="">Not sure yet</option>
+            <option>Articulate Storyline 360</option>
+            <option>Articulate Rise 360</option>
+            <option>Canvas LMS</option>
+            <option>Google Slides</option>
+            <option>Moodle</option>
+            <option>Custom Interactive (HTML)</option>
+            <option>Build Me a Custom LMS</option>
+            <option>Other / Open to suggestions</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="msg">Tell Me About Your Project</label>
+          <textarea id="msg" placeholder="Briefly describe what you need — goals, audience, timeline, budget range, etc." required></textarea>
+        </div>
+        <button type="submit" class="form-submit" id="submit-btn">Send Message →</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Web Education Services<span>.</span></div>
+  <div class="footer-links">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="demo.html" target="_blank">Live Demo</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="footer-copy">© 2025 Dr. Rachelle Babcock, D.Ed. · Web Education Services</div>
+</footer>
+
+<script>
+function handleReportSignup(e) {
+  e.preventDefault();
+  var btn = e.target.querySelector('.report-email-btn');
+  var input = document.getElementById('report-email');
+  btn.textContent = 'You\'re in! ✓';
+  btn.style.background = '#065F46';
+  btn.style.color = '#fff';
+  btn.disabled = true;
+  input.disabled = true;
+  setTimeout(function() {
+    btn.textContent = 'Subscribe →';
+    btn.style.background = '';
+    btn.style.color = '';
+    btn.disabled = false;
+    input.disabled = false;
+    input.value = '';
+  }, 3000);
+}
+
+function handleSubmit(e) {
+  e.preventDefault();
+  var btn = document.getElementById('submit-btn');
+  btn.textContent = 'Message Sent ✓';
+  btn.style.background = '#065F46';
+  btn.disabled = true;
+  setTimeout(function() {
+    btn.textContent = 'Send Message →';
+    btn.style.background = '';
+    btn.disabled = false;
+    e.target.reset();
+  }, 3000);
+}
+</script>
+
+</body>
+</html>
