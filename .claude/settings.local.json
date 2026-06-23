@@ -19,7 +19,14 @@
       "PowerShell($env:Path = [System.Environment]::GetEnvironmentVariable\\(\"Path\",\"Machine\"\\) + \";\" + [System.Environment]::GetEnvironmentVariable\\(\"Path\",\"User\"\\); node --version; npm --version)",
       "PowerShell($prefix = npm config get prefix; Write-Output \"npm prefix: $prefix\"; Test-Path \"$prefix\\\\vercel.cmd\")",
       "Bash(git clone *)",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(git branch *)",
+      "Bash(git remote *)",
+      "Bash(git fetch *)",
+      "Bash(git merge *)",
+      "Bash(git push *)",
+      "Bash(gh api *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" -L https://rachelle1985.github.io/instructional-design/)"
     ]
   }
 }
