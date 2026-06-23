@@ -33,7 +33,8 @@
       "Bash(mv -f c1-team-laptop.jpg collaboration-design.jpg)",
       "Bash(mv -f c4-workshop.jpg team-around-laptop.jpg)",
       "Bash(mv -f c7-collab-table.jpg team-meeting.jpg)",
-      "Bash(mv -f c6-one-on-one.jpg engaged-learner.jpg)"
+      "Bash(mv -f c6-one-on-one.jpg engaged-learner.jpg)",
+      "WebFetch(domain:www.elblearning.com)"
     ]
   }
 }
