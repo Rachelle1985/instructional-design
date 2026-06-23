@@ -26,7 +26,14 @@
       "Bash(git merge *)",
       "Bash(git push *)",
       "Bash(gh api *)",
-      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" -L https://rachelle1985.github.io/instructional-design/)"
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" -L https://rachelle1985.github.io/instructional-design/)",
+      "Bash(ls \"C:/Users/Rachelle Babcock/OneDrive/Desktop/millennium-lawn-landscape-assets/images/\" | head -80)",
+      "Bash(ls \"C:/Users/Rachelle Babcock/OneDrive/Desktop/millennium-lawn-landscape-assets/oldsite-content/\")",
+      "Read(//c/Users/Rachelle Babcock/OneDrive/Desktop/millennium-lawn-landscape-assets/**)",
+      "Bash(mv -f c1-team-laptop.jpg collaboration-design.jpg)",
+      "Bash(mv -f c4-workshop.jpg team-around-laptop.jpg)",
+      "Bash(mv -f c7-collab-table.jpg team-meeting.jpg)",
+      "Bash(mv -f c6-one-on-one.jpg engaged-learner.jpg)"
     ]
   }
 }

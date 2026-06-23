@@ -97,6 +97,12 @@ h2.section-title, .ai-focus-headline, .contact-tagline, .report-name { font-weig
 .report-category .ico { width: 14px; height: 14px; margin-right: 1px; }
 .eyebrow .ico { color: var(--blue-600); }
 
+/* ── PHOTO FIGURES ── */
+.section-figure { border-radius: var(--r-xl); overflow: hidden; box-shadow: 0 10px 36px rgba(3,129,204,0.14); }
+.section-figure img { display: block; width: 100%; aspect-ratio: 16 / 8; object-fit: cover; object-position: center; }
+.media-caption { font-size: 13px; color: var(--gray-500); text-align: center; font-style: italic; line-height: 1.6; max-width: 620px; margin: 0.85rem auto 0; }
+@media (max-width: 860px) { .section-figure img { aspect-ratio: 4 / 3; } }
+
 /* ── NAV ── */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
@@ -902,6 +908,10 @@ footer {
   <div class="section-inner">
     <div class="eyebrow">About</div>
     <h2 class="section-title">Why I Do This Work</h2>
+    <figure class="section-figure" style="margin-bottom:1rem;">
+      <img src="images/collaboration-design.jpg" alt="A team collaborating around a table with laptops and notes during a course design session" loading="lazy" />
+    </figure>
+    <p class="media-caption" style="margin-bottom:2.5rem;">Great learning starts with collaboration — I work side-by-side with your subject-matter experts to turn what they know into training that works.</p>
     <div class="about-grid">
       <div class="about-left">
         <div class="about-photo-wrap">
@@ -1228,6 +1238,9 @@ footer {
     <div class="eyebrow">How I Work</div>
     <h2 class="section-title">From Brief to Launch</h2>
     <p class="section-lead">A proven process that keeps projects on time, on budget, and on target.</p>
+    <figure class="section-figure" style="margin-top:2.5rem;">
+      <img src="images/team-around-laptop.jpg" alt="A small team working together around a laptop" loading="lazy" />
+    </figure>
     <div class="process-steps">
       <div class="process-step">
         <div class="step-num">01</div>
