@@ -4,6 +4,8 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Dr. Rachelle Babcock | Web Education Services</title>
+<link rel="icon" type="image/png" href="images/wes-logo.png" />
+<link rel="apple-touch-icon" href="images/wes-logo.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:ital,wght@0,500;0,600;0,700;0,800;1,600;1,700&display=swap" rel="stylesheet" />
@@ -14,27 +16,27 @@
   --blue-900: #064273;   /* dark headings, footer, nav */
   --blue-800: #0570B0;   /* legacy alias → Blue 700 */
   --blue-700: #0570B0;   /* strong emphasis, active */
-  --blue-600: #0381CC;   /* PRIMARY brand blue — buttons, links, icons */
+  --blue-600: #0381CC;   /* PRIMARY brand blue, buttons, links, icons */
   --blue-500: #1A9FE0;   /* hover, secondary links */
   --blue-400: #1A9FE0;   /* legacy alias → Blue 500 */
   --blue-200: #CCE9F9;   /* legacy alias → Blue 100 */
   --blue-100: #CCE9F9;   /* light blue bg, tags, badges */
   --blue-50:  #EBF5FC;   /* subtle blue wash */
 
-  /* ── Electric Cyan accent (replaces yellow; legacy yellow/amber names remapped) ── */
-  --yellow-600: #0891B2; /* deep cyan — accent text on light bg */
-  --yellow-500: #22D3EE; /* PRIMARY accent — CTAs, highlights */
-  --yellow-400: #67E8F9; /* accent hover (lighter) */
-  --yellow-100: #CFFAFE; /* light cyan bg, callouts */
-  --yellow-50:  #ECFEFF; /* subtle cyan wash */
-  --amber-900: #053246;  /* dark text on cyan */
-  --amber-800: #0891B2;  /* → cyan-600 */
-  --amber-700: #0891B2;  /* → cyan-600 */
-  --amber-600: #0E9CC0;  /* → cyan-600 */
-  --amber-400: #22D3EE;  /* → cyan-500 */
-  --amber-300: #22D3EE;  /* primary accent → cyan-500 */
-  --amber-100: #67E8F9;  /* hover → cyan-400 */
-  --amber-50:  #ECFEFF;  /* → cyan-50 */
+  /* ── Brand Yellow accent (legacy "amber" names remapped to the yellow scale) ── */
+  --yellow-600: #C9A800; /* dark yellow text on light bg */
+  --yellow-500: #FDD618; /* PRIMARY CTA, highlights */
+  --yellow-400: #FDE04A; /* CTA hover */
+  --yellow-100: #FEF6CC; /* light yellow bg, callouts */
+  --yellow-50:  #FFFBE5; /* subtle yellow wash */
+  --amber-900: #064273;  /* text on yellow = Blue 900 */
+  --amber-800: #C9A800;  /* → Yellow 600 */
+  --amber-700: #C9A800;  /* → Yellow 600 */
+  --amber-600: #C9A800;  /* → Yellow 600 */
+  --amber-400: #FDD618;  /* → Yellow 500 */
+  --amber-300: #FDD618;  /* primary accent → Yellow 500 */
+  --amber-100: #FDE04A;  /* hover → Yellow 400 */
+  --amber-50:  #FFFBE5;  /* → Yellow 50 */
 
   /* ── Neutrals ── */
   --gray-900: #111827;
@@ -155,10 +157,11 @@ nav {
 }
 .nav-logo-icon {
   width: 38px; height: 38px; border-radius: var(--r-md);
-  background: var(--blue-600);
+  background: #FFFFFF;
   display: flex; align-items: center; justify-content: center;
-  font-size: 18px;
+  padding: 4px; overflow: hidden;
 }
+.nav-logo-icon img { width: 100%; height: 100%; object-fit: contain; display: block; }
 .nav-logo-text { line-height: 1.15; }
 .nav-logo-name {
   font-family: var(--font-serif);
@@ -176,7 +179,7 @@ nav {
   background: var(--yellow-500); color: var(--blue-900) !important;
   padding: 10px 22px; border-radius: var(--r-md);
   font-weight: 600 !important; transition: background 0.2s !important;
-  white-space: nowrap; box-shadow: 0 2px 8px rgba(34,211,238,0.3);
+  white-space: nowrap; box-shadow: 0 2px 8px rgba(253,214,24,0.3);
 }
 .nav-cta:hover { background: var(--yellow-400) !important; }
 
@@ -197,14 +200,14 @@ nav {
   content: '';
   position: absolute; bottom: -100px; left: -60px;
   width: 400px; height: 400px; border-radius: 50%;
-  background: rgba(34,211,238,0.06);
+  background: rgba(253,214,24,0.06);
 }
 .hero-inner { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
 .hero-eyebrow {
   display: inline-block;
   font-size: 12px; font-weight: 500; letter-spacing: 0.1em;
   text-transform: uppercase; color: var(--amber-300);
-  background: rgba(34,211,238,0.12); border: 1px solid rgba(34,211,238,0.25);
+  background: rgba(253,214,24,0.12); border: 1px solid rgba(253,214,24,0.25);
   padding: 5px 16px; border-radius: 100px; margin-bottom: 1.5rem;
 }
 .hero h1 {
@@ -223,7 +226,7 @@ nav {
   background: var(--yellow-500); color: var(--blue-900);
   padding: 14px 28px; border-radius: var(--r-md);
   font-size: 16px; font-weight: 600; text-decoration: none;
-  box-shadow: 0 2px 8px rgba(34,211,238,0.3);
+  box-shadow: 0 2px 8px rgba(253,214,24,0.3);
   transition: background 0.15s, transform 0.1s; white-space: nowrap;
 }
 .btn-primary:hover { background: var(--yellow-400); transform: translateY(-1px); }
@@ -408,7 +411,7 @@ h2.section-title em { font-style: italic; color: var(--blue-600); }
 .ai-focus-right::before {
   content: ''; position: absolute; top: -60px; right: -60px;
   width: 200px; height: 200px; border-radius: 50%;
-  background: rgba(34,211,238,0.08);
+  background: rgba(253,214,24,0.08);
 }
 .ai-stat-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
 .ai-stat {
@@ -425,7 +428,7 @@ h2.section-title em { font-style: italic; color: var(--blue-600); }
 }
 .ai-ethics-tag {
   display: inline-flex; align-items: center; gap: 6px;
-  background: rgba(34,211,238,0.15); border: 1px solid rgba(34,211,238,0.3);
+  background: rgba(253,214,24,0.15); border: 1px solid rgba(253,214,24,0.3);
   color: var(--amber-300); font-size: 12px; font-weight: 500;
   padding: 6px 14px; border-radius: 100px; margin-bottom: 0.75rem;
 }
@@ -450,18 +453,18 @@ h2.section-title em { font-style: italic; color: var(--blue-600); }
   border-radius: var(--r-lg); padding: 1.25rem 1.4rem;
   transition: border-color 0.2s, background 0.2s;
 }
-.lms-feat:hover { border-color: rgba(34,211,238,0.4); background: rgba(255,255,255,0.07); }
+.lms-feat:hover { border-color: rgba(253,214,24,0.4); background: rgba(255,255,255,0.07); }
 .lms-feat-icon {
   width: 40px; height: 40px; flex-shrink: 0; border-radius: 10px;
   display: flex; align-items: center; justify-content: center; font-size: 18px;
 }
 .lms-feat-icon.navy { background: rgba(255,255,255,0.08); }
-.lms-feat-icon.amber { background: rgba(34,211,238,0.15); }
+.lms-feat-icon.amber { background: rgba(253,214,24,0.15); }
 .lms-feat-title { font-size: 14px; font-weight: 500; color: var(--white); margin-bottom: 4px; }
 .lms-feat-desc { font-size: 13px; font-weight: 300; color: var(--blue-100); line-height: 1.65; }
 .lms-analytics-card {
   background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(34,211,238,0.25);
+  border: 1px solid rgba(253,214,24,0.25);
   border-radius: var(--r-xl); padding: 1.75rem;
   margin-top: 1rem;
 }
@@ -510,7 +513,7 @@ h2.section-title em { font-style: italic; color: var(--blue-600); }
 }
 .demo-features li::before {
   content: '✓'; width: 20px; height: 20px; border-radius: 50%;
-  background: rgba(34,211,238,0.15); color: var(--amber-300);
+  background: rgba(253,214,24,0.15); color: var(--amber-300);
   display: flex; align-items: center; justify-content: center;
   font-size: 12px; flex-shrink: 0;
 }
@@ -682,11 +685,11 @@ h2.section-title em { font-style: italic; color: var(--blue-600); }
   background: var(--white);
   border: 2px solid var(--amber-300);
   border-radius: 14px;
-  box-shadow: 0 4px 24px rgba(34,211,238,0.10);
+  box-shadow: 0 4px 24px rgba(253,214,24,0.10);
   overflow: hidden;
   transition: transform 0.2s, box-shadow 0.2s;
 }
-.report-card-featured:hover { transform: translateY(-3px); box-shadow: 0 10px 36px rgba(34,211,238,0.18); }
+.report-card-featured:hover { transform: translateY(-3px); box-shadow: 0 10px 36px rgba(253,214,24,0.18); }
 .report-card-featured-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
 .report-card-featured-left { padding: 2rem 2rem 2rem 2rem; border-right: 1px solid var(--gray-100); }
 .report-card-featured-right { padding: 2rem 2rem 2rem 2rem; background: var(--gray-50); }
@@ -800,6 +803,12 @@ footer {
   font-size: 16px; color: var(--white);
 }
 .footer-logo span { color: var(--amber-300); }
+.footer-brand { display: flex; align-items: center; gap: 12px; }
+.footer-logo-mark {
+  width: 40px; height: 40px; border-radius: var(--r-md); background: #FFFFFF;
+  display: flex; align-items: center; justify-content: center; padding: 5px; flex-shrink: 0;
+}
+.footer-logo-mark img { width: 100%; height: 100%; object-fit: contain; display: block; }
 .footer-links { display: flex; gap: 1.5rem; }
 .footer-links a { font-size: 13px; color: var(--blue-200); text-decoration: none; }
 .footer-links a:hover { color: var(--amber-300); }
@@ -807,22 +816,22 @@ footer {
 
 /* ════════════ FUTURISTIC THEME (Hybrid) ════════════ */
 :root {
-  --cyan-400: #22D3EE; --cyan-300: #5EE7FF;
-  --grad-accent: linear-gradient(135deg, var(--blue-600), var(--cyan-400));
+  --cyan-400: #FDD618; --cyan-300: #FDE04A;
+  --grad-accent: linear-gradient(135deg, var(--blue-600), var(--yellow-500));
 }
 
 /* Scroll progress bar */
 #scroll-progress {
   position: fixed; top: 0; left: 0; height: 3px; width: 0;
-  background: linear-gradient(90deg, var(--blue-600), var(--cyan-400), var(--cyan-300));
-  box-shadow: 0 0 12px rgba(34,211,238,0.7); z-index: 200; transition: width 0.1s linear;
+  background: linear-gradient(90deg, var(--blue-600), var(--yellow-500), var(--yellow-400));
+  box-shadow: 0 0 12px rgba(253,214,24,0.7); z-index: 200; transition: width 0.1s linear;
 }
 
-/* Hero — layered gradient + tech grid + glow */
+/* Hero, layered gradient + tech grid + glow */
 .hero {
   background:
-    radial-gradient(55% 75% at 82% -10%, rgba(34,211,238,0.20), transparent 60%),
-    radial-gradient(45% 65% at 2% 115%, rgba(34,211,238,0.12), transparent 60%),
+    radial-gradient(55% 75% at 82% -10%, rgba(253,214,24,0.20), transparent 60%),
+    radial-gradient(45% 65% at 2% 115%, rgba(253,214,24,0.12), transparent 60%),
     linear-gradient(160deg, #052f56 0%, #064273 45%, #022d4f 100%);
 }
 .hero::before {
@@ -835,37 +844,33 @@ footer {
   -webkit-mask: radial-gradient(72% 62% at 50% 38%, #000 28%, transparent 82%);
   mask: radial-gradient(72% 62% at 50% 38%, #000 28%, transparent 82%);
 }
-.hero::after { background: rgba(34,211,238,0.10); animation: floaty 9s ease-in-out infinite; }
+.hero::after { background: rgba(253,214,24,0.10); animation: floaty 9s ease-in-out infinite; }
 
 /* Gradient-accent headings */
 .hero h1 em {
-  background: linear-gradient(92deg, #22D3EE 0%, #67E8F9 45%, #FFFFFF 100%);
+  background: linear-gradient(92deg, #FDD618 0%, #FDE04A 45%, #FFFFFF 100%);
   -webkit-background-clip: text; background-clip: text;
   color: transparent; -webkit-text-fill-color: transparent;
 }
-h2.section-title em, .ai-focus-headline em, .contact-tagline em, .report-name span {
-  background: var(--grad-accent);
-  -webkit-background-clip: text; background-clip: text;
-  color: transparent; -webkit-text-fill-color: transparent;
-}
+h2.section-title em { color: var(--blue-600); font-style: italic; }
 #lms .section-title em, #demo .section-title em {
-  background: linear-gradient(120deg, var(--cyan-300), var(--yellow-400));
+  background: linear-gradient(120deg, var(--yellow-400), var(--yellow-400));
   -webkit-background-clip: text; background-clip: text;
   color: transparent; -webkit-text-fill-color: transparent;
 }
 
 /* Glowing buttons */
-.btn-primary { box-shadow: 0 4px 22px rgba(34,211,238,0.40); }
-.btn-primary:hover { box-shadow: 0 8px 32px rgba(34,211,238,0.55); }
-.nav-cta { box-shadow: 0 2px 16px rgba(34,211,238,0.40); }
+.btn-primary { box-shadow: 0 4px 22px rgba(253,214,24,0.40); }
+.btn-primary:hover { box-shadow: 0 8px 32px rgba(253,214,24,0.55); }
+.nav-cta { box-shadow: 0 2px 16px rgba(253,214,24,0.40); }
 
 /* Stat / number glow */
-.stat-n span { text-shadow: 0 0 20px rgba(34,211,238,0.55); }
-.ai-stat-num { text-shadow: 0 0 22px rgba(34,211,238,0.45); }
+.stat-n span { text-shadow: 0 0 20px rgba(253,214,24,0.55); }
+.ai-stat-num { text-shadow: 0 0 22px rgba(253,214,24,0.45); }
 
-/* Cards — cyan glow + gradient hover ring */
+/* Cards: yellow glow + gradient hover ring */
 .service-card:hover, .solution-card:hover, .project-card:hover, .report-card:hover, .report-card-featured:hover {
-  box-shadow: 0 18px 50px rgba(3,129,204,0.16), 0 0 0 1px rgba(34,211,238,0.30);
+  box-shadow: 0 18px 50px rgba(3,129,204,0.16), 0 0 0 1px rgba(253,214,24,0.30);
 }
 .service-card::before { background: var(--grad-accent); height: 3px; }
 .solution-card::before {
@@ -875,11 +880,11 @@ h2.section-title em, .ai-focus-headline em, .contact-tagline em, .report-name sp
 }
 .solution-card { position: relative; overflow: hidden; }
 .solution-card:hover::before { opacity: 1; }
-.industry:hover { box-shadow: 0 8px 24px rgba(3,129,204,0.14), 0 0 0 1px rgba(34,211,238,0.25); }
+.industry:hover { box-shadow: 0 8px 24px rgba(3,129,204,0.14), 0 0 0 1px rgba(253,214,24,0.25); }
 
-/* Dark feature sections — premium edge glow */
-.ai-focus-right, .demo-preview { box-shadow: 0 0 0 1px rgba(34,211,238,0.15), 0 24px 60px rgba(0,0,0,0.35); }
-.lms-feat:hover { box-shadow: 0 10px 36px rgba(34,211,238,0.18); }
+/* Dark feature sections, premium edge glow */
+.ai-focus-right, .demo-preview { box-shadow: 0 0 0 1px rgba(253,214,24,0.15), 0 24px 60px rgba(0,0,0,0.35); }
+.lms-feat:hover { box-shadow: 0 10px 36px rgba(253,214,24,0.18); }
 
 /* Scroll-reveal */
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s cubic-bezier(.2,.7,.2,1), transform 0.7s cubic-bezier(.2,.7,.2,1); }
@@ -970,7 +975,7 @@ h2.section-title em, .ai-focus-headline em, .contact-tagline em, .report-name sp
 <!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">
-    <div class="nav-logo-icon"><svg class="ico" width="20" height="20"><use href="#i-grad"/></svg></div>
+    <div class="nav-logo-icon"><img src="images/wes-logo.png" alt="Web Education Services logo" /></div>
     <div class="nav-logo-text">
       <div class="nav-logo-name">Web Education Services</div>
       <div class="nav-logo-sub">Dr. Rachelle Babcock, D.Ed.</div>
@@ -995,14 +1000,14 @@ h2.section-title em, .ai-focus-headline em, .contact-tagline em, .report-name sp
   <div class="hero-inner">
     <div class="hero-eyebrow">Instructional Designer · AI Integration Specialist · D.Ed.</div>
     <h1>Better training.<br>Smarter teams.<br><em>AI that actually gets used.</em></h1>
-    <p class="hero-sub">Dr. Rachelle Babcock builds engaging, results-driven learning experiences — and teaches your employees how to use AI tools effectively and ethically so your whole organization works smarter. From custom LMS platforms to AI integration training, everything is designed, built, and deployed end-to-end. One expert. No handoffs. Real results.</p>
+    <p class="hero-sub">Dr. Rachelle Babcock builds engaging, results-driven learning experiences, and teaches your employees how to use AI tools effectively and ethically so your whole organization works smarter. From custom LMS platforms to AI integration training, everything is designed, built, and deployed end-to-end. One expert. No handoffs. Real results.</p>
     <div class="hero-actions">
       <a href="#portfolio" class="btn-primary">See My Work →</a>
       <a href="demo.html" target="_blank" class="btn-outline-white">View Live Demo ↗</a>
     </div>
     <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:2rem;">
       <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:var(--blue-100);font-size:12.5px;padding:6px 14px;border-radius:100px;"><svg class="ico" width="15" height="15"><use href="#i-grad"/></svg> Course Development</div>
-      <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(34,211,238,0.15);border:1px solid rgba(34,211,238,0.3);color:var(--yellow-500);font-size:12.5px;padding:6px 14px;border-radius:100px;"><svg class="ico" width="15" height="15"><use href="#i-spark"/></svg> AI Integration Training</div>
+      <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(253,214,24,0.15);border:1px solid rgba(253,214,24,0.3);color:var(--yellow-500);font-size:12.5px;padding:6px 14px;border-radius:100px;"><svg class="ico" width="15" height="15"><use href="#i-spark"/></svg> AI Integration Training</div>
       <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:var(--blue-100);font-size:12.5px;padding:6px 14px;border-radius:100px;"><svg class="ico" width="15" height="15"><use href="#i-blocks"/></svg> Custom LMS Builds</div>
       <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:var(--blue-100);font-size:12.5px;padding:6px 14px;border-radius:100px;"><svg class="ico" width="15" height="15"><use href="#i-chart"/></svg> Real-Time Analytics</div>
     </div>
@@ -1037,9 +1042,9 @@ h2.section-title em, .ai-focus-headline em, .contact-tagline em, .report-name sp
     <div class="eyebrow">About</div>
     <h2 class="section-title">Why I Do This Work</h2>
     <figure class="section-figure" style="margin-bottom:1rem;">
-      <img src="images/collaboration-design.jpg" alt="A team collaborating around a table with laptops and notes during a course design session" loading="lazy" />
+      <img src="images/team-collaboration.jpg" alt="Four colleagues reviewing work together on a laptop during a course design session" loading="lazy" />
     </figure>
-    <p class="media-caption" style="margin-bottom:2.5rem;">Great learning starts with collaboration — I work side-by-side with your subject-matter experts to turn what they know into training that works.</p>
+    <p class="media-caption" style="margin-bottom:2.5rem;">Great learning starts with collaboration. I work side-by-side with your subject-matter experts to turn what they know into training that works.</p>
     <div class="about-grid">
       <div class="about-left">
         <div class="about-photo-wrap">
@@ -1052,8 +1057,8 @@ h2.section-title em, .ai-focus-headline em, .contact-tagline em, .report-name sp
         </div>
         <blockquote>"Learning design isn't about making slides. It's about changing what people can do."</blockquote>
         <div class="about-body">
-          <p>I'm Dr. Rachelle Babcock — a Doctor of Education with years of hands-on experience designing learning for organizations that want real results, not just course completions. I oversee every project from initial needs analysis to final deployment, so there's one person accountable and no gaps between strategy and execution.</p>
-          <p>I work with corporate training teams, higher education institutions, nonprofits, and small businesses who need learning that's beautifully designed <em>and</em> genuinely effective. Based in New Port Richey, FL — available remotely worldwide.</p>
+          <p>I'm Dr. Rachelle Babcock, a Doctor of Education with years of hands-on experience designing learning for organizations that want real results, not just course completions. I oversee every project from initial needs analysis to final deployment, so there's one person accountable and no gaps between strategy and execution.</p>
+          <p>I work with corporate training teams, higher education institutions, nonprofits, and small businesses who need learning that's beautifully designed <em>and</em> genuinely effective. Based in New Port Richey, FL, available remotely worldwide.</p>
         </div>
       </div>
       <div class="about-right">
@@ -1094,42 +1099,42 @@ h2.section-title em, .ai-focus-headline em, .contact-tagline em, .report-name sp
 <section id="solutions" class="section">
   <div class="eyebrow">Solutions</div>
   <h2 class="section-title">What I Help You <em>Achieve</em></h2>
-  <p class="section-lead">Training problems usually trace back to a business outcome. Here's where I help most — each one designed, built, and measured end-to-end.</p>
+  <p class="section-lead">Training problems usually trace back to a business outcome. Here's where I help most, each one designed, built, and measured end-to-end.</p>
   <div class="solutions-grid">
     <div class="solution-card">
       <div class="solution-icon"><svg class="ico"><use href="#i-home"/></svg></div>
       <h3>Employee Onboarding</h3>
-      <p>Turn first-week overwhelm into a confident, consistent start — interactive onboarding new hires actually finish, with progress you can track.</p>
+      <p>Turn first-week overwhelm into a confident, consistent start, interactive onboarding new hires actually finish, with progress you can track.</p>
       <a href="projects/employee-success.html" class="solution-link">See an example →</a>
     </div>
     <div class="solution-card">
       <div class="solution-icon"><svg class="ico"><use href="#i-shield"/></svg></div>
       <h3>Compliance Training</h3>
-      <p>Make required policies stick. Scenario-based courses that turn dense manuals into decisions your team remembers — with clean completion records.</p>
+      <p>Make required policies stick. Scenario-based courses that turn dense manuals into decisions your team remembers, with clean completion records.</p>
       <a href="projects/healthcare-compliance.html" class="solution-link">See an example →</a>
     </div>
     <div class="solution-card">
       <div class="solution-icon"><svg class="ico"><use href="#i-grad"/></svg></div>
       <h3>Leadership &amp; Skills Development</h3>
-      <p>Structured, rigorous programs — from multi-module curricula to certificate tracks — that build real capability, not just course completions.</p>
+      <p>Structured, rigorous programs, from multi-module curricula to certificate tracks, that build real capability, not just course completions.</p>
       <a href="projects/graduate-certificate.html" class="solution-link">See an example →</a>
     </div>
     <div class="solution-card">
       <div class="solution-icon"><svg class="ico"><use href="#i-chart"/></svg></div>
       <h3>Sales Enablement</h3>
-      <p>Right-sized, on-brand microlearning your team can keep current — so reps always have the latest pitch, product facts, and objection handling.</p>
+      <p>Right-sized, on-brand microlearning your team can keep current, so reps always have the latest pitch, product facts, and objection handling.</p>
       <a href="projects/sales-enablement.html" class="solution-link">See an example →</a>
     </div>
     <div class="solution-card">
       <div class="solution-icon accent"><svg class="ico"><use href="#i-spark"/></svg></div>
       <h3>AI Upskilling for Teams</h3>
-      <p>Teach your people to use AI effectively and ethically — when to trust it, when to verify, and how to save hours a week without cutting corners.</p>
+      <p>Teach your people to use AI effectively and ethically, when to trust it, when to verify, and how to save hours a week without cutting corners.</p>
       <a href="#ai-focus" class="solution-link">Explore AI training →</a>
     </div>
     <div class="solution-card">
       <div class="solution-icon"><svg class="ico"><use href="#i-blocks"/></svg></div>
       <h3>Custom LMS &amp; Analytics</h3>
-      <p>A branded learning platform built for your workflows — with real-time analytics that show exactly where employees are struggling.</p>
+      <p>A branded learning platform built for your workflows, with real-time analytics that show exactly where employees are struggling.</p>
       <a href="#lms" class="solution-link">Learn more →</a>
     </div>
   </div>
@@ -1140,7 +1145,7 @@ h2.section-title em, .ai-focus-headline em, .contact-tagline em, .report-name sp
   <div class="section-inner">
     <div class="eyebrow">Industries</div>
     <h2 class="section-title">Who I Work With</h2>
-    <p class="section-lead">Fifteen-plus years across sectors with very different learners — and the same goal every time: training that changes what people can do.</p>
+    <p class="section-lead">Fifteen-plus years across sectors with very different learners, and the same goal every time: training that changes what people can do.</p>
     <div class="industries-row">
       <div class="industry"><svg class="ico"><use href="#i-pulse"/></svg> Healthcare</div>
       <div class="industry"><svg class="ico"><use href="#i-grad"/></svg> Higher Education</div>
@@ -1156,7 +1161,7 @@ h2.section-title em, .ai-focus-headline em, .contact-tagline em, .report-name sp
 <section id="services" class="section">
   <div class="eyebrow">Services &amp; Expertise</div>
   <h2 class="section-title">Tools &amp; Platforms I Work In</h2>
-  <p class="section-lead">From rapid eLearning to full LMS deployments — I work in the tools your team already uses.</p>
+  <p class="section-lead">From rapid eLearning to full LMS deployments. I work in the tools your team already uses.</p>
   <div class="services-grid">
     <div class="service-card">
       <div class="service-icon"><svg class="ico"><use href="#i-target"/></svg></div>
@@ -1181,7 +1186,7 @@ h2.section-title em, .ai-focus-headline em, .contact-tagline em, .report-name sp
     <div class="service-card">
       <div class="service-icon"><svg class="ico"><use href="#i-monitor"/></svg></div>
       <div class="service-name">Canvas LMS</div>
-      <div class="service-desc">Full course builds within Canvas — structured modules, assignments, rubrics, discussion boards, and third-party integrations.</div>
+      <div class="service-desc">Full course builds within Canvas, structured modules, assignments, rubrics, discussion boards, and third-party integrations.</div>
       <div class="service-tags">
         <span class="tag">LMS</span>
         <span class="tag">Higher Ed</span>
@@ -1211,7 +1216,7 @@ h2.section-title em, .ai-focus-headline em, .contact-tagline em, .report-name sp
     <div class="service-card">
       <div class="service-icon"><svg class="ico"><use href="#i-pen"/></svg></div>
       <div class="service-name">Curriculum &amp; Content Writing</div>
-      <div class="service-desc">Script writing, storyboarding, learning objective mapping, and full curriculum design — the instructional strategy that makes everything else work.</div>
+      <div class="service-desc">Script writing, storyboarding, learning objective mapping, and full curriculum design, the instructional strategy that makes everything else work.</div>
       <div class="service-tags">
         <span class="tag amber">Storyboarding</span>
         <span class="tag amber">ADDIE</span>
@@ -1229,20 +1234,20 @@ h2.section-title em, .ai-focus-headline em, .contact-tagline em, .report-name sp
     <div class="ai-focus-grid">
       <div class="ai-focus-left">
         <h2 class="ai-focus-headline">I Don't Just Build Courses.<br><em>I Teach Your Team to Work Smarter with AI.</em></h2>
-        <p class="ai-focus-body">AI is reshaping every industry — including yours. My core focus isn't just designing great training. It's helping businesses and their employees understand how to use AI tools effectively, efficiently, and ethically so they can do more with less effort and stay ahead of what's coming.</p>
+        <p class="ai-focus-body">AI is reshaping every industry, including yours. My core focus isn't just designing great training. It's helping businesses and their employees understand how to use AI tools effectively, efficiently, and ethically so they can do more with less effort and stay ahead of what's coming.</p>
         <ul class="ai-pillar-list">
           <li class="ai-pillar">
             <div class="ai-pillar-icon"><svg class="ico" width="18" height="18"><use href="#i-zap"/></svg></div>
             <div>
               <strong>AI for Productivity</strong>
-              <span>I build training that shows your team exactly which AI tools apply to their daily work — and how to use them to cut hours off their week without cutting corners.</span>
+              <span>I build training that shows your team exactly which AI tools apply to their daily work, and how to use them to cut hours off their week without cutting corners.</span>
             </div>
           </li>
           <li class="ai-pillar">
             <div class="ai-pillar-icon"><svg class="ico" width="18" height="18"><use href="#i-target"/></svg></div>
             <div>
               <strong>AI for Content Creation</strong>
-              <span>From drafting communications to building internal documents, your employees will learn how to use AI as a production tool — not a replacement for their thinking, but an accelerator of it.</span>
+              <span>From drafting communications to building internal documents, your employees will learn how to use AI as a production tool, not a replacement for their thinking, but an accelerator of it.</span>
             </div>
           </li>
           <li class="ai-pillar">
@@ -1266,16 +1271,16 @@ h2.section-title em, .ai-focus-headline em, .contact-tagline em, .report-name sp
           </div>
           <div class="ai-stat">
             <div class="ai-stat-num">62%</div>
-            <div class="ai-stat-label">of workers already use AI tools — with or without employer guidance</div>
+            <div class="ai-stat-label">of workers already use AI tools, with or without employer guidance</div>
           </div>
           <div class="ai-stat">
             <div class="ai-stat-num">2025</div>
             <div class="ai-stat-label">the year AI literacy became a core workplace skill</div>
           </div>
         </div>
-        <div class="ai-quote">"The question is no longer whether your employees will use AI. It's whether they'll know how to use it well — and safely."</div>
+        <div class="ai-quote">"The question is no longer whether your employees will use AI. It's whether they'll know how to use it well, and safely."</div>
         <div class="ai-ethics-tag"><svg class="ico" width="15" height="15"><use href="#i-scale"/></svg> Ethics-First Approach</div>
-        <p class="ai-ethics-body">Every AI training program I design covers not just the how, but the why — responsible use, privacy boundaries, when to trust AI output and when to question it. Your team will leave informed, not just impressed.</p>
+        <p class="ai-ethics-body">Every AI training program I design covers not just the how, but the why, responsible use, privacy boundaries, when to trust AI output and when to question it. Your team will leave informed, not just impressed.</p>
       </div>
     </div>
   </div>
@@ -1286,42 +1291,42 @@ h2.section-title em, .ai-focus-headline em, .contact-tagline em, .report-name sp
   <div class="section-inner" style="padding-top: 5rem; padding-bottom: 5rem;">
     <div class="eyebrow">Custom Solutions</div>
     <h2 class="section-title">Learning Systems Built for <em style="font-style:italic;color:var(--amber-300);">Small Businesses</em></h2>
-    <p class="section-lead">Off-the-shelf platforms are fine — until they're not. When your organization needs a learning ecosystem that fits your workflows, your brand, and your people, I design and build it from the ground up.</p>
+    <p class="section-lead">Off-the-shelf platforms are fine, until they're not. When your organization needs a learning ecosystem that fits your workflows, your brand, and your people, I design and build it from the ground up.</p>
     <div class="lms-grid">
       <div class="lms-features">
         <div class="lms-feat">
           <div class="lms-feat-icon navy"><svg class="ico" width="20" height="20"><use href="#i-blocks"/></svg></div>
           <div>
             <div class="lms-feat-title">End-to-End Build &amp; Deployment</div>
-            <div class="lms-feat-desc">From architecture and design to hosting, configuration, and go-live — I handle every layer. One point of contact, zero handoff chaos.</div>
+            <div class="lms-feat-desc">From architecture and design to hosting, configuration, and go-live. I handle every layer. One point of contact, zero handoff chaos.</div>
           </div>
         </div>
         <div class="lms-feat">
           <div class="lms-feat-icon amber"><svg class="ico" width="20" height="20"><use href="#i-link"/></svg></div>
           <div>
             <div class="lms-feat-title">Seamless Integrations</div>
-            <div class="lms-feat-desc">SCORM, xAPI, HRIS systems, SSO, Zoom, Salesforce — your platform connects to the tools your team already uses so learning fits into the day instead of interrupting it.</div>
+            <div class="lms-feat-desc">SCORM, xAPI, HRIS systems, SSO, Zoom, Salesforce. Your platform connects to the tools your team already uses so learning fits into the day instead of interrupting it.</div>
           </div>
         </div>
         <div class="lms-feat">
           <div class="lms-feat-icon navy"><svg class="ico" width="20" height="20"><use href="#i-palette"/></svg></div>
           <div>
             <div class="lms-feat-title">Fully Branded to Your Organization</div>
-            <div class="lms-feat-desc">Your logo, your colors, your voice throughout. The experience feels like yours — not a generic template your employees can tell you bought off a shelf.</div>
+            <div class="lms-feat-desc">Your logo, your colors, your voice throughout. The experience feels like yours, not a generic template your employees can tell you bought off a shelf.</div>
           </div>
         </div>
         <div class="lms-feat">
           <div class="lms-feat-icon amber"><svg class="ico" width="20" height="20"><use href="#i-shield"/></svg></div>
           <div>
             <div class="lms-feat-title">Ongoing Support &amp; Continuous Improvement</div>
-            <div class="lms-feat-desc">Launch day is just the beginning. I provide hands-on support — updates, new content, user management, and performance reviews — so your platform keeps growing with your organization.</div>
+            <div class="lms-feat-desc">Launch day is just the beginning. I provide hands-on support, updates, new content, user management, and performance reviews, so your platform keeps growing with your organization.</div>
           </div>
         </div>
       </div>
       <div>
         <div style="margin-bottom:1.25rem;">
           <div style="font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--yellow-500);margin-bottom:0.6rem;"><svg class="ico" width="14" height="14"><use href="#i-chart"/></svg> Real-Time Analytics</div>
-          <p style="font-size:14px;color:var(--blue-100);line-height:1.75;margin-bottom:1rem;">Most onboarding ends with a checkbox. Mine ends with a clear picture of what each employee actually learned — and where they need more support.</p>
+          <p style="font-size:14px;color:var(--blue-100);line-height:1.75;margin-bottom:1rem;">Most onboarding ends with a checkbox. Mine ends with a clear picture of what each employee actually learned, and where they need more support.</p>
           <ul class="analytics-insight-list">
             <li>See which questions employees answered wrong and how many tries it took</li>
             <li>Track time per section to spot where learners disengaged or got stuck</li>
@@ -1333,7 +1338,7 @@ h2.section-title em, .ai-focus-headline em, .contact-tagline em, .report-name sp
         </div>
         <div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:1.25rem;">
           <div style="font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--yellow-500);margin-bottom:0.6rem;"><svg class="ico" width="14" height="14"><use href="#i-dollar"/></svg> Simple, Affordable Hosting</div>
-          <p style="font-size:14px;color:var(--blue-100);line-height:1.75;">Your program is hosted for a low monthly fee that includes IT support as needed — so if something breaks, you have someone to call. No enterprise contracts, no per-seat pricing. Just a reliable link you send to every new hire.</p>
+          <p style="font-size:14px;color:var(--blue-100);line-height:1.75;">Your program is hosted for a low monthly fee that includes IT support as needed, so if something breaks, you have someone to call. No enterprise contracts, no per-seat pricing. Just a reliable link you send to every new hire.</p>
         </div>
       </div>
     </div>
@@ -1351,7 +1356,7 @@ h2.section-title em, .ai-focus-headline em, .contact-tagline em, .report-name sp
       <div class="demo-left">
         <div class="eyebrow">See It In Action</div>
         <h2 class="section-title">A 40-page handbook transformed into a <em>45-minute experience</em></h2>
-        <p class="section-lead">This live demo shows exactly what I build — a fully interactive onboarding program with quizzes, drag-and-drop activities, AI coaching, a branded certificate, and a real-time analytics dashboard.</p>
+        <p class="section-lead">This live demo shows exactly what I build, a fully interactive onboarding program with quizzes, drag-and-drop activities, AI coaching, a branded certificate, and a real-time analytics dashboard.</p>
         <ul class="demo-features">
           <li>Interactive module with scenario-based learning</li>
           <li>Knowledge checks with instant feedback</li>
@@ -1387,7 +1392,7 @@ h2.section-title em, .ai-focus-headline em, .contact-tagline em, .report-name sp
           <div class="demo-screen-row">
             <div class="demo-screen-dot active"></div>
             <div class="demo-screen-text">Respect in the Workplace</div>
-            <div class="demo-screen-bar"><div class="demo-screen-fill" style="width:60%;background:#22D3EE;"></div></div>
+            <div class="demo-screen-bar"><div class="demo-screen-fill" style="width:60%;background:#FDD618;"></div></div>
           </div>
           <div class="demo-screen-row">
             <div class="demo-screen-dot todo"></div>
@@ -1399,7 +1404,7 @@ h2.section-title em, .ai-focus-headline em, .contact-tagline em, .report-name sp
             <div class="demo-screen-text">Certificate</div>
             <div class="demo-screen-bar"><div class="demo-screen-fill" style="width:0%;"></div></div>
           </div>
-          <div style="margin-top:0.75rem;padding:0.75rem;background:rgba(34,211,238,0.12);border-radius:8px;border:1px solid rgba(34,211,238,0.25);">
+          <div style="margin-top:0.75rem;padding:0.75rem;background:rgba(253,214,24,0.12);border-radius:8px;border:1px solid rgba(253,214,24,0.25);">
             <div style="font-size:12px;color:var(--yellow-500);font-weight:500;margin-bottom:4px;display:flex;align-items:center;gap:5px;"><svg class="ico" width="13" height="13"><use href="#i-chart"/></svg> Live Analytics</div>
             <div style="display:flex;gap:1rem;">
               <div style="text-align:center;">
@@ -1429,7 +1434,7 @@ h2.section-title em, .ai-focus-headline em, .contact-tagline em, .report-name sp
     <h2 class="section-title">From Brief to Launch</h2>
     <p class="section-lead">A proven process that keeps projects on time, on budget, and on target.</p>
     <figure class="section-figure" style="margin-top:2.5rem;">
-      <img src="images/team-around-laptop.jpg" alt="A small team working together around a laptop" loading="lazy" />
+      <img src="images/ai-solutions.jpg" alt="Facilitator presenting AI-powered learning solutions to a small team" loading="lazy" />
     </figure>
     <div class="process-steps">
       <div class="process-step">
@@ -1445,7 +1450,7 @@ h2.section-title em, .ai-focus-headline em, .contact-tagline em, .report-name sp
       <div class="process-step">
         <div class="step-num">03</div>
         <div class="step-name">Develop</div>
-        <div class="step-desc">Full course build in your chosen platform — interactivity, media, assessments, and SCORM packaging included.</div>
+        <div class="step-desc">Full course build in your chosen platform, interactivity, media, assessments, and SCORM packaging included.</div>
       </div>
       <div class="process-step">
         <div class="step-num">04</div>
@@ -1473,7 +1478,7 @@ h2.section-title em, .ai-focus-headline em, .contact-tagline em, .report-name sp
         <span class="thumb-label">Articulate Storyline 360</span>
       </div>
       <div class="project-body">
-        <div class="project-name">Compliance Training — Healthcare Onboarding</div>
+        <div class="project-name">Compliance Training: Healthcare Onboarding</div>
         <div class="project-desc">Branching scenario-based course with custom characters, SCORM tracking, and 92% completion in pilot.</div>
         <a href="projects/healthcare-compliance.html" class="project-link">View Case Study →</a>
       </div>
@@ -1484,7 +1489,7 @@ h2.section-title em, .ai-focus-headline em, .contact-tagline em, .report-name sp
         <span class="thumb-label">Articulate Rise 360</span>
       </div>
       <div class="project-body">
-        <div class="project-name">New Employee Orientation — Tech Sector</div>
+        <div class="project-name">New Employee Orientation: Tech Sector</div>
         <div class="project-desc">Responsive Rise course for mobile-first learners with embedded videos, knowledge checks, and a resource library.</div>
         <a href="projects/tech-onboarding.html" class="project-link">View Case Study →</a>
       </div>
@@ -1495,7 +1500,7 @@ h2.section-title em, .ai-focus-headline em, .contact-tagline em, .report-name sp
         <span class="thumb-label">Canvas LMS</span>
       </div>
       <div class="project-body">
-        <div class="project-name">Graduate Certificate Program — 6 Modules</div>
+        <div class="project-name">Graduate Certificate Program: 6 Modules</div>
         <div class="project-desc">Complete course architecture in Canvas with rubrics, discussion forums, video lectures, and automated grade passback.</div>
         <a href="projects/graduate-certificate.html" class="project-link">View Case Study →</a>
       </div>
@@ -1507,7 +1512,7 @@ h2.section-title em, .ai-focus-headline em, .contact-tagline em, .report-name sp
       </div>
       <div class="project-body">
         <div class="project-name">Sales Enablement Deck Series</div>
-        <div class="project-desc">12-part microlearning series for a distributed sales team — shareable, trackable, easy for managers to update.</div>
+        <div class="project-desc">12-part microlearning series for a distributed sales team, shareable, trackable, easy for managers to update.</div>
         <a href="projects/sales-enablement.html" class="project-link">View Case Study →</a>
       </div>
     </div>
@@ -1517,7 +1522,7 @@ h2.section-title em, .ai-focus-headline em, .contact-tagline em, .report-name sp
         <span class="thumb-label">Interactive HTML</span>
       </div>
       <div class="project-body">
-        <div class="project-name">New Employee Success — Onboarding Program</div>
+        <div class="project-name">New Employee Success: Onboarding Program</div>
         <div class="project-desc">45-minute interactive onboarding with quizzes, AI coaching, live analytics, and a branded completion certificate.</div>
         <a href="projects/employee-success.html" class="project-link">View Case Study →</a>
       </div>
@@ -1538,7 +1543,7 @@ h2.section-title em, .ai-focus-headline em, .contact-tagline em, .report-name sp
       <div class="report-title-block">
         <div class="eyebrow">Blog &amp; Insights</div>
         <div class="report-name">The WES <span>Report</span></div>
-        <div class="report-tagline">AI, emerging tools, and what's changing the way people learn at work — so your training never falls behind.</div>
+        <div class="report-tagline">AI, emerging tools, and what's changing the way people learn at work, so your training never falls behind.</div>
       </div>
       <a href="#wes-report" class="report-subscribe">Get New Issues →</a>
     </div>
@@ -1554,24 +1559,24 @@ h2.section-title em, .ai-focus-headline em, .contact-tagline em, .report-name sp
               <span class="report-read-time">8 min read</span>
             </div>
             <div class="report-card-featured-title">Untrained on AI? Your Employees Are Already Making Costly Mistakes.</div>
-            <div class="report-card-featured-intro">AI tools are now embedded in daily work across nearly every industry — but most organizations have deployed them without providing any structured training on how to use them correctly. The result is a growing pattern of errors, blind trust, and liability exposure that research is beginning to quantify in alarming detail.</div>
+            <div class="report-card-featured-intro">AI tools are now embedded in daily work across nearly every industry, but most organizations have deployed them without providing any structured training on how to use them correctly. The result is a growing pattern of errors, blind trust, and liability exposure that research is beginning to quantify in alarming detail.</div>
 
             <h4 style="font-family:var(--font-serif);font-size:.9rem;color:var(--blue-900);margin:0 0 .6rem;">What the Research Shows</h4>
             <ul class="report-stats-list">
               <li>
-                <strong>Over-reliance is the #1 AI risk in the workplace.</strong> A 2024 Microsoft &amp; LinkedIn Work Trend Index found that 78% of AI users bring their own tools to work — often without any organizational guidance — and that employees who over-trust AI output are significantly more likely to propagate errors without review.
+                <strong>Over-reliance is the #1 AI risk in the workplace.</strong> A 2024 Microsoft &amp; LinkedIn Work Trend Index found that 78% of AI users bring their own tools to work, often without any organizational guidance, and that employees who over-trust AI output are significantly more likely to propagate errors without review.
                 <span class="report-stat-source">Source: Microsoft/LinkedIn Work Trend Index Annual Report, 2024</span>
               </li>
               <li>
-                <strong>AI "hallucinations" are causing real-world errors.</strong> Stanford HAI research found that large language models produce confidently-stated but factually incorrect information in 3–27% of responses depending on the task domain — a rate most employees are completely unaware of.
-                <span class="report-stat-source">Source: Stanford Human-Centered AI (HAI) Institute, 2023–2024</span>
+                <strong>AI "hallucinations" are causing real-world errors.</strong> Stanford HAI research found that large language models produce confidently-stated but factually incorrect information in 3-27% of responses depending on the task domain, a rate most employees are completely unaware of.
+                <span class="report-stat-source">Source: Stanford Human-Centered AI (HAI) Institute, 2023-2024</span>
               </li>
               <li>
-                <strong>Only 14% of employees have received formal AI training.</strong> Despite rapid adoption, a Salesforce survey of 14,000 workers found that just 1 in 7 have been given any structured guidance on AI use at work — leaving the vast majority to form their own (often incorrect) assumptions about accuracy and reliability.
+                <strong>Only 14% of employees have received formal AI training.</strong> Despite rapid adoption, a Salesforce survey of 14,000 workers found that just 1 in 7 have been given any structured guidance on AI use at work, leaving the vast majority to form their own (often incorrect) assumptions about accuracy and reliability.
                 <span class="report-stat-source">Source: Salesforce "Generative AI Snapshot Research Series," 2023</span>
               </li>
               <li>
-                <strong>Errors from over-reliance cost organizations significantly.</strong> A 2023 Gartner report estimated that by 2025, poor-quality AI output — including unchecked AI-generated content used in business decisions — will cost organizations an average of $13 million per year in remediation and rework.
+                <strong>Errors from over-reliance cost organizations significantly.</strong> A 2023 Gartner report estimated that by 2025, poor-quality AI output, including unchecked AI-generated content used in business decisions, will cost organizations an average of $13 million per year in remediation and rework.
                 <span class="report-stat-source">Source: Gartner, "Innovation Insight: AI Trust, Risk and Security Management," 2023</span>
               </li>
               <li>
@@ -1584,19 +1589,19 @@ h2.section-title em, .ai-focus-headline em, .contact-tagline em, .report-name sp
 
           <div class="report-card-featured-right">
             <h4>The Right Way to Train Employees on AI</h4>
-            <p style="font-size:13px;color:var(--gray-500);line-height:1.65;margin:0 0 1rem;">Effective AI training isn't about telling employees to stop using it — it's about teaching them <em>when to trust it, when to question it, and always how to verify it.</em> Here's how WES approaches this:</p>
+            <p style="font-size:13px;color:var(--gray-500);line-height:1.65;margin:0 0 1rem;">Effective AI training isn't about telling employees to stop using it. It's about teaching them <em>when to trust it, when to question it, and always how to verify it.</em> Here's how WES approaches this:</p>
 
             <ul class="report-wes-list">
-              <li><strong>AI Literacy First.</strong> Before any tool training, employees learn what AI actually is — including what it can and cannot do, how it generates output, and why confident-sounding answers are not the same as accurate ones.</li>
-              <li><strong>Use-Case-Specific Guidance.</strong> WES builds training tailored to <em>your</em> tools and workflows — so employees learn the right way to use the specific AI features in their daily roles, not generic AI theory.</li>
+              <li><strong>AI Literacy First.</strong> Before any tool training, employees learn what AI actually is, including what it can and cannot do, how it generates output, and why confident-sounding answers are not the same as accurate ones.</li>
+              <li><strong>Use-Case-Specific Guidance.</strong> WES builds training tailored to <em>your</em> tools and workflows, so employees learn the right way to use the specific AI features in their daily roles, not generic AI theory.</li>
               <li><strong>Verification Habits Built In.</strong> Every WES AI training module includes explicit checkpoints: when to fact-check, where to cross-reference, and how to recognize red flags in AI output before acting on it.</li>
-              <li><strong>Ethical AI Use Frameworks.</strong> Employees learn how to handle sensitive data with AI, understand copyright and privacy boundaries, and apply your organization's acceptable-use policy — not just best guesses.</li>
+              <li><strong>Ethical AI Use Frameworks.</strong> Employees learn how to handle sensitive data with AI, understand copyright and privacy boundaries, and apply your organization's acceptable-use policy, not just best guesses.</li>
               <li><strong>Ongoing Reinforcement.</strong> AI tools change fast. WES designs training that includes update cycles, so employees aren't learning on outdated assumptions as models evolve.</li>
             </ul>
 
             <div class="report-check-callout">
               <p><strong>Know when to check. Know when to trust.</strong><br><br>
-              The biggest AI mistake isn't using it — it's using it without understanding its limits. WES teaches your team a simple, repeatable habit: <em>use AI to accelerate, verify before you act, and never skip human judgment on high-stakes output.</em> That one shift dramatically reduces errors, liability, and the costly rework that follows unchecked AI use.</p>
+              The biggest AI mistake isn't using it. It's using it without understanding its limits. WES teaches your team a simple, repeatable habit: <em>use AI to accelerate, verify before you act, and never skip human judgment on high-stakes output.</em> That one shift dramatically reduces errors, liability, and the costly rework that follows unchecked AI use.</p>
             </div>
 
             <a href="#contact" class="btn btn-primary" style="display:inline-block;font-size:14px;padding:.65rem 1.5rem;">Build AI Training for My Team →</a>
@@ -1611,7 +1616,7 @@ h2.section-title em, .ai-focus-headline em, .contact-tagline em, .report-name sp
         </div>
         <div class="report-card-body">
           <div class="report-card-title">Your Employees Already Use AI. Your Training Should Too.</div>
-          <div class="report-card-teaser">AI tools like ChatGPT are already sitting in your employees' workflow — whether you've sanctioned them or not. The organizations winning right now aren't banning AI from training. They're building it in. Here's how to use AI as a coaching tool inside your onboarding and compliance programs.</div>
+          <div class="report-card-teaser">AI tools like ChatGPT are already sitting in your employees' workflow, whether you've sanctioned them or not. The organizations winning right now aren't banning AI from training. They're building it in. Here's how to use AI as a coaching tool inside your onboarding and compliance programs.</div>
           <a href="#contact" class="report-card-link">Read More →</a>
         </div>
       </div>
@@ -1623,7 +1628,7 @@ h2.section-title em, .ai-focus-headline em, .contact-tagline em, .report-name sp
         </div>
         <div class="report-card-body">
           <div class="report-card-title">The Death of the Click-Through Compliance Course</div>
-          <div class="report-card-teaser">Employees have been clicking "Next" through mandatory training for two decades. AI-powered analytics now show us what we always suspected — completion rates mean almost nothing. We break down what organizations are replacing checkbox training with, and why it's working.</div>
+          <div class="report-card-teaser">Employees have been clicking "Next" through mandatory training for two decades. AI-powered analytics now show us what we always suspected: completion rates mean almost nothing. We break down what organizations are replacing checkbox training with, and why it's working.</div>
           <a href="#contact" class="report-card-link">Read More →</a>
         </div>
       </div>
@@ -1635,7 +1640,7 @@ h2.section-title em, .ai-focus-headline em, .contact-tagline em, .report-name sp
         </div>
         <div class="report-card-body">
           <div class="report-card-title">What Your Onboarding Data Is Actually Telling You</div>
-          <div class="report-card-teaser">Most small businesses know their new hire completion rate. Almost none know which module caused the most wrong answers, where employees disengaged, or which knowledge gaps predicted poor 90-day performance. AI-driven learning analytics are changing that — and you don't need an enterprise LMS to access them.</div>
+          <div class="report-card-teaser">Most small businesses know their new hire completion rate. Almost none know which module caused the most wrong answers, where employees disengaged, or which knowledge gaps predicted poor 90-day performance. AI-driven learning analytics are changing that, and you don't need an enterprise LMS to access them.</div>
           <a href="#contact" class="report-card-link">Read More →</a>
         </div>
       </div>
@@ -1647,7 +1652,7 @@ h2.section-title em, .ai-focus-headline em, .contact-tagline em, .report-name sp
         </div>
         <div class="report-card-body">
           <div class="report-card-title">Microlearning + AI: The Combination Replacing Hour-Long Training Videos</div>
-          <div class="report-card-teaser">Research is clear — people retain more from short, focused bursts of learning than from long passive sessions. Pair that with AI that adapts content based on how each learner is actually performing, and you have a training model that's faster, cheaper, and dramatically more effective than anything a one-size-fits-all video can offer.</div>
+          <div class="report-card-teaser">Research is clear: people retain more from short, focused bursts of learning than from long passive sessions. Pair that with AI that adapts content based on how each learner is actually performing, and you have a training model that's faster, cheaper, and dramatically more effective than anything a one-size-fits-all video can offer.</div>
           <a href="#contact" class="report-card-link">Read More →</a>
         </div>
       </div>
@@ -1674,35 +1679,35 @@ h2.section-title em, .ai-focus-headline em, .contact-tagline em, .report-name sp
   <div class="faq-list">
     <details class="faq-item">
       <summary>What kinds of training do you build?</summary>
-      <div class="faq-a">Everything from a single microlearning module to a full onboarding program or multi-course curriculum — interactive eLearning, scenario-based courses, compliance training, job aids, and custom interactive web experiences. If it helps people learn to do something better, I can design and build it.</div>
+      <div class="faq-a">Everything from a single microlearning module to a full onboarding program or multi-course curriculum, interactive eLearning, scenario-based courses, compliance training, job aids, and custom interactive web experiences. If it helps people learn to do something better, I can design and build it.</div>
     </details>
     <details class="faq-item">
       <summary>What tools and platforms do you work in?</summary>
-      <div class="faq-a">Articulate Storyline 360 and Rise 360, Canvas, Moodle, Google Slides, and custom HTML/CSS/JavaScript — plus full curriculum and content writing. I match the tool to your goal and budget, not the other way around.</div>
+      <div class="faq-a">Articulate Storyline 360 and Rise 360, Canvas, Moodle, Google Slides, and custom HTML/CSS/JavaScript, plus full curriculum and content writing. I match the tool to your goal and budget, not the other way around.</div>
     </details>
     <details class="faq-item">
       <summary>How much does a project cost?</summary>
-      <div class="faq-a">Every project is scoped individually — a one-module job aid and a six-module certificate program are very different animals. After a short discovery conversation I'll give you a clear, fixed quote, so there are no surprise hourly bills. <a href="#contact">Reach out</a> and I'll walk you through it.</div>
+      <div class="faq-a">Every project is scoped individually. A one-module job aid and a six-module certificate program are very different animals. After a short discovery conversation I'll give you a clear, fixed quote, so there are no surprise hourly bills. <a href="#contact">Reach out</a> and I'll walk you through it.</div>
     </details>
     <details class="faq-item">
       <summary>How long does a typical project take?</summary>
-      <div class="faq-a">A focused microlearning piece can be ready in a couple of weeks; a full course or onboarding program usually runs 4–12 weeks depending on scope and review cycles. You'll get a clear schedule at kickoff — and I stick to it.</div>
+      <div class="faq-a">A focused microlearning piece can be ready in a couple of weeks; a full course or onboarding program usually runs 4-12 weeks depending on scope and review cycles. You'll get a clear schedule at kickoff, and I stick to it.</div>
     </details>
     <details class="faq-item">
       <summary>Do you really teach teams to use AI?</summary>
-      <div class="faq-a">Yes — it's a core part of what I do. I train your team to use AI tools effectively and ethically: when to trust the output, when to verify it, how to protect sensitive data, and how to genuinely save hours each week. <a href="#ai-focus">More on AI training →</a></div>
+      <div class="faq-a">Yes, it's a core part of what I do. I train your team to use AI tools effectively and ethically: when to trust the output, when to verify it, how to protect sensitive data, and how to genuinely save hours each week. <a href="#ai-focus">More on AI training →</a></div>
     </details>
     <details class="faq-item">
       <summary>Do I need an LMS to use what you build?</summary>
-      <div class="faq-a">Not necessarily. I can deliver SCORM-ready courses for your existing LMS, or build and host a custom solution for a low monthly fee that includes IT support — just a reliable link you send to every new hire. <a href="#lms">See custom LMS options →</a></div>
+      <div class="faq-a">Not necessarily. I can deliver SCORM-ready courses for your existing LMS, or build and host a custom solution for a low monthly fee that includes IT support, just a reliable link you send to every new hire. <a href="#lms">See custom LMS options →</a></div>
     </details>
     <details class="faq-item">
       <summary>Can you work with our existing content and subject-matter experts?</summary>
-      <div class="faq-a">Absolutely — that's the ideal setup. Your experts know the content; I know how to turn it into learning that sticks. Send me what you have (even a rough handbook or slide deck) and I'll shape it into something effective.</div>
+      <div class="faq-a">Absolutely. That's the ideal setup. Your experts know the content; I know how to turn it into learning that sticks. Send me what you have (even a rough handbook or slide deck) and I'll shape it into something effective.</div>
     </details>
     <details class="faq-item">
       <summary>Where are you based, and do you work remotely?</summary>
-      <div class="faq-a">I'm based in New Port Richey, FL and work with organizations remotely, worldwide. The whole process — discovery, design, build, and launch — runs smoothly online.</div>
+      <div class="faq-a">I'm based in New Port Richey, FL and work with organizations remotely, worldwide. The whole process, discovery, design, build, and launch, runs smoothly online.</div>
     </details>
   </div>
 </section>
@@ -1753,7 +1758,7 @@ h2.section-title em, .ai-focus-headline em, .contact-tagline em, .report-name sp
         </div>
         <div class="form-group">
           <label for="msg">Tell Me About Your Project</label>
-          <textarea id="msg" placeholder="Briefly describe what you need — goals, audience, timeline, budget range, etc." required></textarea>
+          <textarea id="msg" placeholder="Briefly describe what you need, goals, audience, timeline, budget range, etc." required></textarea>
         </div>
         <button type="submit" class="form-submit" id="submit-btn">Send Message →</button>
       </form>
@@ -1763,7 +1768,10 @@ h2.section-title em, .ai-focus-headline em, .contact-tagline em, .report-name sp
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">Web Education Services<span>.</span></div>
+  <div class="footer-brand">
+    <span class="footer-logo-mark"><img src="images/wes-logo.png" alt="Web Education Services logo" /></span>
+    <div class="footer-logo">Web Education Services<span>.</span></div>
+  </div>
   <div class="footer-links">
     <a href="#about">About</a>
     <a href="#services">Services</a>
