@@ -960,6 +960,30 @@ h2.section-title em { color: var(--blue-600); font-style: italic; }
   .footer-links { justify-content: center; }
   .demo-preview { display: none; }
 }
+/* WES LEARNING SHOWCASE */
+#lms-showcase { background: var(--blue-900); padding: 5rem 0 5.5rem; color: #fff; }
+#lms-showcase .section-inner { max-width: 1100px; margin: 0 auto; padding: 0 2.5rem; }
+#lms-showcase .eyebrow { color: var(--yellow-500); }
+#lms-showcase .section-title { color: #fff; }
+#lms-showcase .section-title em { color: var(--yellow-500); font-style: italic; }
+#lms-showcase .section-lead { color: var(--blue-100); max-width: 720px; }
+.shot-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.75rem; margin-top: 2.75rem; }
+.shot-wide { grid-column: 1 / -1; }
+.shot { margin: 0; }
+.shot-frame { border-radius: var(--r-lg); overflow: hidden; border: 1px solid rgba(255,255,255,0.12); box-shadow: 0 22px 50px rgba(0,0,0,0.45); background: #0c2138; }
+.shot-bar { display: flex; align-items: center; gap: 6px; padding: 9px 12px; background: #0a1c30; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.shot-bar span { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.22); }
+.shot-frame img { display: block; width: 100%; height: auto; }
+.shot figcaption { margin-top: 14px; font-size: 14.5px; line-height: 1.6; color: var(--blue-100); }
+.shot figcaption strong { color: #fff; display: block; margin-bottom: 2px; }
+.showcase-cta { margin-top: 3rem; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+.showcase-cta span { color: var(--blue-200); font-size: 14.5px; max-width: 460px; }
+@media (max-width: 860px) {
+  #lms-showcase { padding: 3.5rem 0; }
+  #lms-showcase .section-inner { padding: 0 1.5rem; }
+  .shot-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+}
+
 /* GUARANTEE */
 #guarantee { background: var(--blue-50); padding: 5rem 0; }
 #guarantee .section-inner { max-width: 1000px; margin: 0 auto; padding: 0 2.5rem; }
@@ -1407,6 +1431,49 @@ h2.section-title em { color: var(--blue-600); font-style: italic; }
 </div>
 
 <!-- LIVE DEMO CTA -->
+<!-- WES LEARNING SHOWCASE -->
+<div id="lms-showcase">
+  <div class="section-inner">
+    <div class="eyebrow">Custom LMS · Built by WES</div>
+    <h2 class="section-title">A platform we built, <em>in action</em></h2>
+    <p class="section-lead">WES Learning is a full learning platform designed and built end to end: branded courses, interactive lessons, an AI coach, and analytics that show exactly where employees struggle. Here is a look inside.</p>
+    <div class="shot-grid">
+      <figure class="shot shot-wide">
+        <div class="shot-frame"><span class="shot-bar"><span></span><span></span><span></span></span><img src="images/lms-analytics.jpg" alt="Company analytics dashboard titled Where students are struggling, with student counts and a signups-over-time chart" loading="lazy" /></div>
+        <figcaption><strong>See exactly where your team gets stuck.</strong> Real-time analytics rank the hardest lessons and interactions, so you fix the training that is not landing.</figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="shot-frame"><span class="shot-bar"><span></span><span></span><span></span></span><img src="images/lms-lesson.jpg" alt="An interactive lesson with a course sidebar and flip cards for Trust, Reputation, and Rules" loading="lazy" /></div>
+        <figcaption><strong>Interactive lessons, not slideshows.</strong> Scenarios, flip cards, and knowledge checks keep people engaged and actually finishing.</figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="shot-frame"><span class="shot-bar"><span></span><span></span><span></span></span><img src="images/lms-dashboard.jpg" alt="Learner dashboard with branded course cards and progress" loading="lazy" /></div>
+        <figcaption><strong>A branded platform your team logs into.</strong> Your courses, your colors, one place your people keep coming back to.</figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="shot-frame"><span class="shot-bar"><span></span><span></span><span></span></span><img src="images/lms-instructor.jpg" alt="Talk to an Instructor AI assistant with suggested questions" loading="lazy" /></div>
+        <figcaption><strong>An AI coach trained on your content.</strong> Learners can ask questions any time and get answers grounded in your material.</figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="shot-frame"><span class="shot-bar"><span></span><span></span><span></span></span><img src="images/lms-objectives.jpg" alt="Module overview page with learning objectives and a time estimate" loading="lazy" /></div>
+        <figcaption><strong>Every module mapped to real outcomes.</strong> Clear objectives and time estimates, so people know exactly what they will be able to do.</figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="shot-frame"><span class="shot-bar"><span></span><span></span><span></span></span><img src="images/lms-progress.jpg" alt="My Progress page with completion stats and module badges" loading="lazy" /></div>
+        <figcaption><strong>Progress, badges, and certificates they earn.</strong> Momentum that keeps learners moving and gives managers a clear completion picture.</figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="shot-frame"><span class="shot-bar"><span></span><span></span><span></span></span><img src="images/lms-quickstarts.jpg" alt="Quick Starts page offering goal-based learning paths" loading="lazy" /></div>
+        <figcaption><strong>Personalized paths, not one-size-fits-all.</strong> Learners pick a goal and get just the modules they need, not the whole catalog.</figcaption>
+      </figure>
+    </div>
+    <div class="showcase-cta">
+      <a href="#contact" class="btn-primary">Book a Discovery Call →</a>
+      <span>Want a live walkthrough of the whole platform? I will show you around.</span>
+    </div>
+  </div>
+</div>
+
 <!-- PROCESS -->
 <div id="process">
   <div class="section-inner" style="padding-top: 5rem; padding-bottom: 5rem;">
