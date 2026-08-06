@@ -182,6 +182,17 @@ nav {
   white-space: nowrap; box-shadow: 0 2px 8px rgba(253,214,24,0.3);
 }
 .nav-cta:hover { background: var(--yellow-400) !important; }
+.nav-toggle {
+  display: none;
+  flex-direction: column; justify-content: center; gap: 5px;
+  width: 42px; height: 42px; padding: 9px;
+  background: none; border: none; cursor: pointer;
+}
+.nav-toggle span {
+  display: block; height: 2px; width: 100%;
+  background: #fff; border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
 
 /* ── HERO ── */
 .hero {
@@ -911,7 +922,25 @@ h2.section-title em { color: var(--blue-600); font-style: italic; }
 /* ── RESPONSIVE ── */
 @media (max-width: 860px) {
   nav { padding: 0 1.5rem; }
-  .nav-links { display: none; }
+  .nav-toggle { display: flex; }
+  .nav-links {
+    position: fixed; top: 68px; left: 0; right: 0; z-index: 99;
+    flex-direction: column; align-items: stretch; gap: 0;
+    background: var(--blue-900);
+    padding: 0.5rem 0 1.25rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 16px 30px rgba(0,0,0,0.3);
+    max-height: calc(100vh - 68px); overflow-y: auto;
+    transform: translateY(-10px); opacity: 0; pointer-events: none;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+  .nav-links.open { transform: translateY(0); opacity: 1; pointer-events: auto; }
+  .nav-links li { width: 100%; }
+  .nav-links a { display: block; padding: 15px 1.5rem; font-size: 16px; }
+  .nav-links .nav-cta { margin: 0.85rem 1.5rem 0; text-align: center; padding: 14px 22px; }
+  .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-toggle.open span:nth-child(2) { opacity: 0; }
+  .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
   .hero { padding: 100px 1.5rem 60px; }
   .stats-bar { grid-template-columns: repeat(2, 1fr); padding: 1.5rem; }
   .stat-item + .stat-item { border-left: none; }
@@ -981,7 +1010,10 @@ h2.section-title em { color: var(--blue-600); font-style: italic; }
       <div class="nav-logo-sub">Dr. Rachelle Babcock, D.Ed.</div>
     </div>
   </a>
-  <ul class="nav-links">
+  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#ai-focus">AI Training</a></li>
@@ -1836,6 +1868,24 @@ function handleSubmit(e) {
     });
   }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
   els.forEach(function (el) { io.observe(el); });
+})();
+
+/* ── Mobile nav toggle ── */
+(function () {
+  var toggle = document.querySelector('.nav-toggle');
+  var menu = document.getElementById('nav-links');
+  if (!toggle || !menu) return;
+  function setOpen(open) {
+    menu.classList.toggle('open', open);
+    toggle.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  toggle.addEventListener('click', function () {
+    setOpen(!menu.classList.contains('open'));
+  });
+  menu.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { setOpen(false); });
+  });
 })();
 </script>
 
