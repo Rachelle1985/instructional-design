@@ -967,9 +967,16 @@ h2.section-title em { color: var(--blue-600); font-style: italic; }
 #lms-showcase .section-title { color: #fff; }
 #lms-showcase .section-title em { color: var(--yellow-500); font-style: italic; }
 #lms-showcase .section-lead { color: var(--blue-100); max-width: 720px; }
-.shot-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.75rem; margin-top: 2.75rem; }
-.shot-wide { grid-column: 1 / -1; }
-.shot { margin: 0; }
+.sc-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 2.25rem; }
+.sc-tab { font-family: var(--font-body); font-size: 13.5px; font-weight: 600; color: var(--blue-100); background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); padding: 8px 16px; border-radius: 999px; cursor: pointer; transition: background 0.15s, color 0.15s, border-color 0.15s; }
+.sc-tab:hover { background: rgba(255,255,255,0.12); color: #fff; }
+.sc-tab.active { background: var(--yellow-500); color: var(--blue-900); border-color: var(--yellow-500); }
+.sc-tab:focus-visible { outline: 2px solid var(--yellow-400); outline-offset: 2px; }
+.shot-grid { max-width: 960px; margin: 1.5rem auto 0; }
+.shot { margin: 0; display: none; }
+.shot.active { display: block; animation: scFade 0.25s ease; }
+@media (prefers-reduced-motion: reduce) { .shot.active { animation: none; } }
+@keyframes scFade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 .shot-frame { border-radius: var(--r-lg); overflow: hidden; border: 1px solid rgba(255,255,255,0.12); box-shadow: 0 22px 50px rgba(0,0,0,0.45); background: #0c2138; }
 .shot-bar { display: flex; align-items: center; gap: 6px; padding: 9px 12px; background: #0a1c30; border-bottom: 1px solid rgba(255,255,255,0.08); }
 .shot-bar span { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.22); }
@@ -1437,8 +1444,17 @@ h2.section-title em { color: var(--blue-600); font-style: italic; }
     <div class="eyebrow">Custom LMS · Built by WES</div>
     <h2 class="section-title">A platform we built, <em>in action</em></h2>
     <p class="section-lead">WES Learning is a full learning platform designed and built end to end: branded courses, interactive lessons, an AI coach, and analytics that show exactly where employees struggle. Here is a look inside.</p>
+    <div class="sc-tabs" role="tablist">
+      <button class="sc-tab active" type="button">Analytics</button>
+      <button class="sc-tab" type="button">Interactive lessons</button>
+      <button class="sc-tab" type="button">Dashboard</button>
+      <button class="sc-tab" type="button">AI coach</button>
+      <button class="sc-tab" type="button">Objectives</button>
+      <button class="sc-tab" type="button">Progress</button>
+      <button class="sc-tab" type="button">Quick starts</button>
+    </div>
     <div class="shot-grid">
-      <figure class="shot shot-wide">
+      <figure class="shot shot-wide active">
         <div class="shot-frame"><span class="shot-bar"><span></span><span></span><span></span></span><img src="images/lms-analytics.jpg" alt="Company analytics dashboard titled Where students are struggling, with student counts and a signups-over-time chart" loading="lazy" /></div>
         <figcaption><strong>See exactly where your team gets stuck.</strong> Real-time analytics rank the hardest lessons and interactions, so you fix the training that is not landing.</figcaption>
       </figure>
@@ -1988,6 +2004,21 @@ function handleSubmit(e) {
   });
   menu.querySelectorAll('a').forEach(function (a) {
     a.addEventListener('click', function () { setOpen(false); });
+  });
+})();
+
+/* ── LMS showcase tabs ── */
+(function () {
+  var tabs = [].slice.call(document.querySelectorAll('#lms-showcase .sc-tab'));
+  var shots = [].slice.call(document.querySelectorAll('#lms-showcase .shot'));
+  if (!tabs.length || tabs.length !== shots.length) return;
+  tabs.forEach(function (tab, i) {
+    tab.addEventListener('click', function () {
+      tabs.forEach(function (t) { t.classList.remove('active'); });
+      shots.forEach(function (s) { s.classList.remove('active'); });
+      tab.classList.add('active');
+      shots[i].classList.add('active');
+    });
   });
 })();
 </script>
