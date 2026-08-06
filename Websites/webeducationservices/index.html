@@ -960,6 +960,15 @@ h2.section-title em { color: var(--blue-600); font-style: italic; }
   .footer-links { justify-content: center; }
   .demo-preview { display: none; }
 }
+/* GUARANTEE */
+#guarantee { background: var(--blue-50); padding: 5rem 0; }
+#guarantee .section-inner { max-width: 1000px; margin: 0 auto; padding: 0 2.5rem; }
+.guarantee-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2.5rem; }
+.guarantee-item { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--r-lg); padding: 1.75rem; box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06); }
+.guarantee-icon { width: 42px; height: 42px; border-radius: var(--r-md); background: rgba(253,214,24,0.16); display: flex; align-items: center; justify-content: center; color: var(--yellow-600); margin-bottom: 1rem; }
+.guarantee-item strong { display: block; font-family: var(--font-serif); font-size: 1.05rem; color: var(--blue-900); margin-bottom: 0.4rem; }
+.guarantee-item p { font-size: 14px; color: var(--gray-600); line-height: 1.65; margin: 0; max-width: none; }
+@media (max-width: 860px) { .guarantee-grid { grid-template-columns: 1fr; } #guarantee { padding: 3.5rem 0; } #guarantee .section-inner { padding: 0 1.5rem; } }
 </style>
 </head>
 <body>
@@ -1033,7 +1042,7 @@ h2.section-title em { color: var(--blue-600); font-style: italic; }
     <p class="hero-sub">We help organizations adopt AI, modernize training, and turn both into measurable results: faster onboarding, stronger performance, real adoption. Strategy, build, and rollout, handled end to end by one accountable partner.</p>
     <div class="hero-actions">
       <a href="#contact" class="btn-primary">Book a Discovery Call →</a>
-      <a href="#ai-focus" class="btn-outline-white">Explore AI Solutions</a>
+      <a href="demo.html" target="_blank" class="btn-outline-white">See a Live Demo ↗</a>
     </div>
     <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:2rem;">
       <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(253,214,24,0.15);border:1px solid rgba(253,214,24,0.3);color:var(--yellow-500);font-size:12.5px;padding:6px 14px;border-radius:100px;"><svg class="ico" width="15" height="15"><use href="#i-spark"/></svg> AI Enablement &amp; Training</div>
@@ -1169,6 +1178,83 @@ h2.section-title em { color: var(--blue-600); font-style: italic; }
     </div>
   </div>
 </section>
+
+<div id="demo">
+  <div class="section-inner">
+    <div class="demo-grid">
+      <div class="demo-left">
+        <div class="eyebrow">See It In Action</div>
+        <h2 class="section-title">A 40-page handbook transformed into a <em>45-minute experience</em></h2>
+        <p class="section-lead">This live demo shows exactly what I build, a fully interactive onboarding program with quizzes, drag-and-drop activities, AI coaching, a branded certificate, and a real-time analytics dashboard.</p>
+        <ul class="demo-features">
+          <li>Interactive module with scenario-based learning</li>
+          <li>Knowledge checks with instant feedback</li>
+          <li>AI workplace coaching activity</li>
+          <li>Printable certificate of completion</li>
+          <li>Live analytics &amp; struggle detection</li>
+          <li>No LMS subscription required</li>
+        </ul>
+        <div class="demo-cta-row">
+          <a href="demo.html" target="_blank" class="btn-primary">Open Live Demo ↗</a>
+          <a href="#contact" class="btn-outline-white">Get One Built →</a>
+        </div>
+      </div>
+      <div class="demo-preview">
+        <div class="demo-browser-bar">
+          <div class="dot red"></div>
+          <div class="dot yellow"></div>
+          <div class="dot green"></div>
+          <div class="demo-browser-url">webeducationservices.com/demo</div>
+        </div>
+        <div class="demo-tabs">
+          <div class="demo-tab active"><svg class="ico" width="13" height="13"><use href="#i-home"/></svg> Dashboard</div>
+          <div class="demo-tab"><svg class="ico" width="13" height="13"><use href="#i-book"/></svg> Module</div>
+          <div class="demo-tab"><svg class="ico" width="13" height="13"><use href="#i-spark"/></svg> AI Lab</div>
+          <div class="demo-tab"><svg class="ico" width="13" height="13"><use href="#i-chart"/></svg> Analytics</div>
+        </div>
+        <div class="demo-screen-items">
+          <div class="demo-screen-row">
+            <div class="demo-screen-dot done"></div>
+            <div class="demo-screen-text">Welcome Dashboard</div>
+            <div class="demo-screen-bar"><div class="demo-screen-fill" style="width:100%;background:#10B981;"></div></div>
+          </div>
+          <div class="demo-screen-row">
+            <div class="demo-screen-dot active"></div>
+            <div class="demo-screen-text">Respect in the Workplace</div>
+            <div class="demo-screen-bar"><div class="demo-screen-fill" style="width:60%;background:#FDD618;"></div></div>
+          </div>
+          <div class="demo-screen-row">
+            <div class="demo-screen-dot todo"></div>
+            <div class="demo-screen-text">AI Lab</div>
+            <div class="demo-screen-bar"><div class="demo-screen-fill" style="width:0%;"></div></div>
+          </div>
+          <div class="demo-screen-row">
+            <div class="demo-screen-dot todo"></div>
+            <div class="demo-screen-text">Certificate</div>
+            <div class="demo-screen-bar"><div class="demo-screen-fill" style="width:0%;"></div></div>
+          </div>
+          <div style="margin-top:0.75rem;padding:0.75rem;background:rgba(253,214,24,0.12);border-radius:8px;border:1px solid rgba(253,214,24,0.25);">
+            <div style="font-size:12px;color:var(--yellow-500);font-weight:500;margin-bottom:4px;display:flex;align-items:center;gap:5px;"><svg class="ico" width="13" height="13"><use href="#i-chart"/></svg> Live Analytics</div>
+            <div style="display:flex;gap:1rem;">
+              <div style="text-align:center;">
+                <div style="font-size:20px;font-weight:500;color:var(--white);">72%</div>
+                <div style="font-size:10px;color:var(--blue-200);">Complete</div>
+              </div>
+              <div style="text-align:center;">
+                <div style="font-size:20px;font-weight:500;color:var(--white);">12m</div>
+                <div style="font-size:10px;color:var(--blue-200);">Time Spent</div>
+              </div>
+              <div style="text-align:center;">
+                <div style="font-size:20px;font-weight:500;color:var(--white);">80%</div>
+                <div style="font-size:10px;color:var(--blue-200);">Quiz Score</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- INDUSTRIES -->
 <div id="industries">
@@ -1321,83 +1407,6 @@ h2.section-title em { color: var(--blue-600); font-style: italic; }
 </div>
 
 <!-- LIVE DEMO CTA -->
-<div id="demo">
-  <div class="section-inner">
-    <div class="demo-grid">
-      <div class="demo-left">
-        <div class="eyebrow">See It In Action</div>
-        <h2 class="section-title">A 40-page handbook transformed into a <em>45-minute experience</em></h2>
-        <p class="section-lead">This live demo shows exactly what I build, a fully interactive onboarding program with quizzes, drag-and-drop activities, AI coaching, a branded certificate, and a real-time analytics dashboard.</p>
-        <ul class="demo-features">
-          <li>Interactive module with scenario-based learning</li>
-          <li>Knowledge checks with instant feedback</li>
-          <li>AI workplace coaching activity</li>
-          <li>Printable certificate of completion</li>
-          <li>Live analytics &amp; struggle detection</li>
-          <li>No LMS subscription required</li>
-        </ul>
-        <div class="demo-cta-row">
-          <a href="demo.html" target="_blank" class="btn-primary">Open Live Demo ↗</a>
-          <a href="#contact" class="btn-outline-white">Get One Built →</a>
-        </div>
-      </div>
-      <div class="demo-preview">
-        <div class="demo-browser-bar">
-          <div class="dot red"></div>
-          <div class="dot yellow"></div>
-          <div class="dot green"></div>
-          <div class="demo-browser-url">webeducationservices.com/demo</div>
-        </div>
-        <div class="demo-tabs">
-          <div class="demo-tab active"><svg class="ico" width="13" height="13"><use href="#i-home"/></svg> Dashboard</div>
-          <div class="demo-tab"><svg class="ico" width="13" height="13"><use href="#i-book"/></svg> Module</div>
-          <div class="demo-tab"><svg class="ico" width="13" height="13"><use href="#i-spark"/></svg> AI Lab</div>
-          <div class="demo-tab"><svg class="ico" width="13" height="13"><use href="#i-chart"/></svg> Analytics</div>
-        </div>
-        <div class="demo-screen-items">
-          <div class="demo-screen-row">
-            <div class="demo-screen-dot done"></div>
-            <div class="demo-screen-text">Welcome Dashboard</div>
-            <div class="demo-screen-bar"><div class="demo-screen-fill" style="width:100%;background:#10B981;"></div></div>
-          </div>
-          <div class="demo-screen-row">
-            <div class="demo-screen-dot active"></div>
-            <div class="demo-screen-text">Respect in the Workplace</div>
-            <div class="demo-screen-bar"><div class="demo-screen-fill" style="width:60%;background:#FDD618;"></div></div>
-          </div>
-          <div class="demo-screen-row">
-            <div class="demo-screen-dot todo"></div>
-            <div class="demo-screen-text">AI Lab</div>
-            <div class="demo-screen-bar"><div class="demo-screen-fill" style="width:0%;"></div></div>
-          </div>
-          <div class="demo-screen-row">
-            <div class="demo-screen-dot todo"></div>
-            <div class="demo-screen-text">Certificate</div>
-            <div class="demo-screen-bar"><div class="demo-screen-fill" style="width:0%;"></div></div>
-          </div>
-          <div style="margin-top:0.75rem;padding:0.75rem;background:rgba(253,214,24,0.12);border-radius:8px;border:1px solid rgba(253,214,24,0.25);">
-            <div style="font-size:12px;color:var(--yellow-500);font-weight:500;margin-bottom:4px;display:flex;align-items:center;gap:5px;"><svg class="ico" width="13" height="13"><use href="#i-chart"/></svg> Live Analytics</div>
-            <div style="display:flex;gap:1rem;">
-              <div style="text-align:center;">
-                <div style="font-size:20px;font-weight:500;color:var(--white);">72%</div>
-                <div style="font-size:10px;color:var(--blue-200);">Complete</div>
-              </div>
-              <div style="text-align:center;">
-                <div style="font-size:20px;font-weight:500;color:var(--white);">12m</div>
-                <div style="font-size:10px;color:var(--blue-200);">Time Spent</div>
-              </div>
-              <div style="text-align:center;">
-                <div style="font-size:20px;font-weight:500;color:var(--white);">80%</div>
-                <div style="font-size:10px;color:var(--blue-200);">Quiz Score</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
 <!-- PROCESS -->
 <div id="process">
   <div class="section-inner" style="padding-top: 5rem; padding-bottom: 5rem;">
@@ -1741,6 +1750,32 @@ h2.section-title em { color: var(--blue-600); font-style: italic; }
     </details>
   </div>
 </section>
+
+<!-- GUARANTEE -->
+<div id="guarantee">
+  <div class="section-inner">
+    <div class="eyebrow">The WES Promise</div>
+    <h2 class="section-title">Low-Risk by <em>Design</em></h2>
+    <p class="section-lead">You're hiring a new firm, but not a new expert. Here's how I make working together an easy yes.</p>
+    <div class="guarantee-grid">
+      <div class="guarantee-item">
+        <div class="guarantee-icon"><svg class="ico" width="20" height="20"><use href="#i-shield"/></svg></div>
+        <strong>A fixed price, agreed up front</strong>
+        <p>You approve a clear, flat quote before any work begins. No hourly creep, no surprise invoices.</p>
+      </div>
+      <div class="guarantee-item">
+        <div class="guarantee-icon"><svg class="ico" width="20" height="20"><use href="#i-zap"/></svg></div>
+        <strong>A schedule I hold to</strong>
+        <p>You get a timeline at kickoff and steady check-ins. If a date is ever at risk, you hear it early, not late.</p>
+      </div>
+      <div class="guarantee-item">
+        <div class="guarantee-icon"><svg class="ico" width="20" height="20"><use href="#i-heart"/></svg></div>
+        <strong>Refined until you're confident</strong>
+        <p>We work through review rounds until it fits your team. You sign off on the result, not me.</p>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- CONTACT -->
 <div id="contact">
