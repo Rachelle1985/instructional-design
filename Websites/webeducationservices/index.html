@@ -11,6 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:ital,wght@0,500;0,600;0,700;0,800;1,600;1,700&display=swap" rel="stylesheet" />
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { overflow-x: hidden; }
 :root {
   /* ── Brand Blue ── */
   --blue-900: #064273;   /* dark headings, footer, nav */
@@ -286,7 +287,7 @@ h2.section-title em { font-style: italic; color: var(--blue-600); }
 .section-lead { font-size: 16px; font-weight: 300; color: var(--gray-600); line-height: 1.75; max-width: 560px; }
 
 /* ── ABOUT ── */
-#about { background: var(--gray-50); padding: 5rem 0; }
+#about { background: var(--blue-50); padding: 5rem 0; }
 #about .section-inner { max-width: 1000px; margin: 0 auto; padding: 0 2.5rem; }
 .about-grid {
   display: grid; grid-template-columns: 1fr 1fr;
@@ -376,7 +377,7 @@ h2.section-title em { font-style: italic; color: var(--blue-600); }
 .tag.amber { background: var(--amber-50); color: var(--amber-800); border-color: var(--amber-100); }
 
 /* ── AI FOCUS ── */
-#ai-focus { background: var(--white); padding: 5rem 0; }
+#ai-focus { background: var(--gray-50); padding: 5rem 0; }
 #ai-focus .section-inner { max-width: 1000px; margin: 0 auto; padding: 0 2.5rem; }
 .ai-focus-grid {
   display: grid; grid-template-columns: 1fr 1fr;
@@ -1065,60 +1066,60 @@ h2.section-title em { color: var(--blue-600); font-style: italic; }
   </div>
 </div>
 
-<!-- ABOUT -->
-<div id="about">
+<!-- AI FOCUS -->
+<div id="ai-focus">
   <div class="section-inner">
-    <div class="eyebrow">About</div>
-    <h2 class="section-title">The Expert Accountable for Your <em>Results</em></h2>
-    <figure class="section-figure" style="margin-bottom:1rem;">
-      <img src="images/team-collaboration.jpg" alt="Four colleagues reviewing work together on a laptop during a course design session" loading="lazy" />
-    </figure>
-    <p class="media-caption" style="margin-bottom:2.5rem;">Great learning starts with collaboration. I work side-by-side with your subject-matter experts to turn what they know into training that works.</p>
-    <div class="about-grid">
-      <div class="about-left">
-        <div class="about-photo-wrap">
-          <img src="rachelle.jpg" alt="Dr. Rachelle Babcock" class="about-photo" />
-          <div class="about-photo-info">
-            <div class="about-photo-name">Dr. Rachelle Babcock</div>
-            <div class="about-photo-cred">D.Ed. · Founder, Web Education Services</div>
-            <div class="about-photo-cred">New Port Richey, FL · Available Remotely</div>
-          </div>
-        </div>
-        <blockquote>"Learning design isn't about making slides. It's about changing what people can do."</blockquote>
-        <div class="about-body">
-          <p>I'm Dr. Rachelle Babcock, founder of Web Education Services. We're the rare partner that combines three things most firms split apart: <strong>AI enablement, learning strategy, and hands-on build.</strong> That's why adoption actually happens, and why you can measure it.</p>
-          <p>When you hire us, one expert owns the strategy, the build, and the rollout. No agency handoffs. No gap between the plan and the result. You get work that's genuinely effective, and a partner accountable for the outcome from kickoff to launch.</p>
-        </div>
+    <div class="ai-focus-badge"><svg class="ico" width="15" height="15"><use href="#i-spark"/></svg> AI Enablement</div>
+    <div class="ai-focus-grid">
+      <div class="ai-focus-left">
+        <h2 class="ai-focus-headline">Most AI Rollouts Fail on Adoption.<br><em>We Make Sure Yours Doesn't.</em></h2>
+        <p class="ai-focus-body">Buying AI tools is easy. Getting your whole team to use them well is where the value is won or lost. We turn AI from a subscription into a habit: the right tools for each role, clear guardrails, and hands-on training that sticks, so your people do more with less effort and stay ahead of what's coming.</p>
+        <ul class="ai-pillar-list">
+          <li class="ai-pillar">
+            <div class="ai-pillar-icon"><svg class="ico" width="18" height="18"><use href="#i-zap"/></svg></div>
+            <div>
+              <strong>AI for Productivity</strong>
+              <span>I build training that shows your team exactly which AI tools apply to their daily work, and how to use them to cut hours off their week without cutting corners.</span>
+            </div>
+          </li>
+          <li class="ai-pillar">
+            <div class="ai-pillar-icon"><svg class="ico" width="18" height="18"><use href="#i-target"/></svg></div>
+            <div>
+              <strong>AI for Content Creation</strong>
+              <span>From drafting communications to building internal documents, your employees will learn how to use AI as a production tool, not a replacement for their thinking, but an accelerator of it.</span>
+            </div>
+          </li>
+          <li class="ai-pillar">
+            <div class="ai-pillar-icon"><svg class="ico" width="18" height="18"><use href="#i-shield"/></svg></div>
+            <div>
+              <strong>Ethical AI Use</strong>
+              <span>Speed without guardrails creates risk. Every AI training I build includes clear guidance on data privacy, accuracy verification, bias awareness, and responsible use in the workplace.</span>
+            </div>
+          </li>
+        </ul>
       </div>
-      <div class="about-right">
-        <div class="principle">
-          <div class="principle-icon"><svg class="ico" width="18" height="18"><use href="#i-target"/></svg></div>
-          <div>
-            <strong>Outcomes first</strong>
-            <span>Every design decision traces back to a measurable learning objective. No fluff, no filler.</span>
+      <div class="ai-focus-right">
+        <div class="ai-stat-row">
+          <div class="ai-stat">
+            <div class="ai-stat-num">77%</div>
+            <div class="ai-stat-label">of employees say they have no formal AI training at work</div>
+          </div>
+          <div class="ai-stat">
+            <div class="ai-stat-num">4×</div>
+            <div class="ai-stat-label">more productive when employees know how to use AI effectively</div>
+          </div>
+          <div class="ai-stat">
+            <div class="ai-stat-num">62%</div>
+            <div class="ai-stat-label">of workers already use AI tools, with or without employer guidance</div>
+          </div>
+          <div class="ai-stat">
+            <div class="ai-stat-num">2025</div>
+            <div class="ai-stat-label">the year AI literacy became a core workplace skill</div>
           </div>
         </div>
-        <div class="principle">
-          <div class="principle-icon"><svg class="ico" width="18" height="18"><use href="#i-users"/></svg></div>
-          <div>
-            <strong>Collaborative by default</strong>
-            <span>Your subject matter experts know the content. I know how to turn it into learning. We make it work together.</span>
-          </div>
-        </div>
-        <div class="principle">
-          <div class="principle-icon"><svg class="ico" width="18" height="18"><use href="#i-ruler"/></svg></div>
-          <div>
-            <strong>Design that earns attention</strong>
-            <span>Learners are busy. I build courses that respect their time and keep them engaged without gimmicks.</span>
-          </div>
-        </div>
-        <div class="principle">
-          <div class="principle-icon"><svg class="ico" width="18" height="18"><use href="#i-zap"/></svg></div>
-          <div>
-            <strong>Deadlines are real</strong>
-            <span>You'll have a clear schedule from kickoff and I'll stick to it. No surprises.</span>
-          </div>
-        </div>
+        <div class="ai-quote">"The question is no longer whether your employees will use AI. It's whether they'll know how to use it well, and safely."</div>
+        <div class="ai-ethics-tag"><svg class="ico" width="15" height="15"><use href="#i-scale"/></svg> Ethics-First Approach</div>
+        <p class="ai-ethics-body">Every AI training program I design covers not just the how, but the why, responsible use, privacy boundaries, when to trust AI output and when to question it. Your team will leave informed, not just impressed.</p>
       </div>
     </div>
   </div>
@@ -1255,65 +1256,6 @@ h2.section-title em { color: var(--blue-600); font-style: italic; }
     </div>
   </div>
 </section>
-
-<!-- AI FOCUS -->
-<div id="ai-focus">
-  <div class="section-inner">
-    <div class="ai-focus-badge"><svg class="ico" width="15" height="15"><use href="#i-spark"/></svg> AI Enablement</div>
-    <div class="ai-focus-grid">
-      <div class="ai-focus-left">
-        <h2 class="ai-focus-headline">Most AI Rollouts Fail on Adoption.<br><em>We Make Sure Yours Doesn't.</em></h2>
-        <p class="ai-focus-body">Buying AI tools is easy. Getting your whole team to use them well is where the value is won or lost. We turn AI from a subscription into a habit: the right tools for each role, clear guardrails, and hands-on training that sticks, so your people do more with less effort and stay ahead of what's coming.</p>
-        <ul class="ai-pillar-list">
-          <li class="ai-pillar">
-            <div class="ai-pillar-icon"><svg class="ico" width="18" height="18"><use href="#i-zap"/></svg></div>
-            <div>
-              <strong>AI for Productivity</strong>
-              <span>I build training that shows your team exactly which AI tools apply to their daily work, and how to use them to cut hours off their week without cutting corners.</span>
-            </div>
-          </li>
-          <li class="ai-pillar">
-            <div class="ai-pillar-icon"><svg class="ico" width="18" height="18"><use href="#i-target"/></svg></div>
-            <div>
-              <strong>AI for Content Creation</strong>
-              <span>From drafting communications to building internal documents, your employees will learn how to use AI as a production tool, not a replacement for their thinking, but an accelerator of it.</span>
-            </div>
-          </li>
-          <li class="ai-pillar">
-            <div class="ai-pillar-icon"><svg class="ico" width="18" height="18"><use href="#i-shield"/></svg></div>
-            <div>
-              <strong>Ethical AI Use</strong>
-              <span>Speed without guardrails creates risk. Every AI training I build includes clear guidance on data privacy, accuracy verification, bias awareness, and responsible use in the workplace.</span>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="ai-focus-right">
-        <div class="ai-stat-row">
-          <div class="ai-stat">
-            <div class="ai-stat-num">77%</div>
-            <div class="ai-stat-label">of employees say they have no formal AI training at work</div>
-          </div>
-          <div class="ai-stat">
-            <div class="ai-stat-num">4×</div>
-            <div class="ai-stat-label">more productive when employees know how to use AI effectively</div>
-          </div>
-          <div class="ai-stat">
-            <div class="ai-stat-num">62%</div>
-            <div class="ai-stat-label">of workers already use AI tools, with or without employer guidance</div>
-          </div>
-          <div class="ai-stat">
-            <div class="ai-stat-num">2025</div>
-            <div class="ai-stat-label">the year AI literacy became a core workplace skill</div>
-          </div>
-        </div>
-        <div class="ai-quote">"The question is no longer whether your employees will use AI. It's whether they'll know how to use it well, and safely."</div>
-        <div class="ai-ethics-tag"><svg class="ico" width="15" height="15"><use href="#i-scale"/></svg> Ethics-First Approach</div>
-        <p class="ai-ethics-body">Every AI training program I design covers not just the how, but the why, responsible use, privacy boundaries, when to trust AI output and when to question it. Your team will leave informed, not just impressed.</p>
-      </div>
-    </div>
-  </div>
-</div>
 
 <!-- CUSTOM LMS -->
 <div id="lms">
@@ -1565,16 +1507,75 @@ h2.section-title em { color: var(--blue-600); font-style: italic; }
   </div>
 </section>
 
+<!-- ABOUT -->
+<div id="about">
+  <div class="section-inner">
+    <div class="eyebrow">About</div>
+    <h2 class="section-title">The Expert Accountable for Your <em>Results</em></h2>
+    <figure class="section-figure" style="margin-bottom:1rem;">
+      <img src="images/team-collaboration.jpg" alt="Four colleagues reviewing work together on a laptop during a course design session" loading="lazy" />
+    </figure>
+    <p class="media-caption" style="margin-bottom:2.5rem;">Great learning starts with collaboration. I work side-by-side with your subject-matter experts to turn what they know into training that works.</p>
+    <div class="about-grid">
+      <div class="about-left">
+        <div class="about-photo-wrap">
+          <img src="rachelle.jpg" alt="Dr. Rachelle Babcock" class="about-photo" />
+          <div class="about-photo-info">
+            <div class="about-photo-name">Dr. Rachelle Babcock</div>
+            <div class="about-photo-cred">D.Ed. · Founder, Web Education Services</div>
+            <div class="about-photo-cred">New Port Richey, FL · Available Remotely</div>
+          </div>
+        </div>
+        <blockquote>"Learning design isn't about making slides. It's about changing what people can do."</blockquote>
+        <div class="about-body">
+          <p>I'm Dr. Rachelle Babcock, founder of Web Education Services. We're the rare partner that combines three things most firms split apart: <strong>AI enablement, learning strategy, and hands-on build.</strong> That's why adoption actually happens, and why you can measure it.</p>
+          <p>When you hire us, one expert owns the strategy, the build, and the rollout. No agency handoffs. No gap between the plan and the result. You get work that's genuinely effective, and a partner accountable for the outcome from kickoff to launch.</p>
+        </div>
+      </div>
+      <div class="about-right">
+        <div class="principle">
+          <div class="principle-icon"><svg class="ico" width="18" height="18"><use href="#i-target"/></svg></div>
+          <div>
+            <strong>Outcomes first</strong>
+            <span>Every design decision traces back to a measurable learning objective. No fluff, no filler.</span>
+          </div>
+        </div>
+        <div class="principle">
+          <div class="principle-icon"><svg class="ico" width="18" height="18"><use href="#i-users"/></svg></div>
+          <div>
+            <strong>Collaborative by default</strong>
+            <span>Your subject matter experts know the content. I know how to turn it into learning. We make it work together.</span>
+          </div>
+        </div>
+        <div class="principle">
+          <div class="principle-icon"><svg class="ico" width="18" height="18"><use href="#i-ruler"/></svg></div>
+          <div>
+            <strong>Design that earns attention</strong>
+            <span>Learners are busy. I build courses that respect their time and keep them engaged without gimmicks.</span>
+          </div>
+        </div>
+        <div class="principle">
+          <div class="principle-icon"><svg class="ico" width="18" height="18"><use href="#i-zap"/></svg></div>
+          <div>
+            <strong>Deadlines are real</strong>
+            <span>You'll have a clear schedule from kickoff and I'll stick to it. No surprises.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- WES REPORT -->
 <div id="wes-report">
   <div class="section-inner">
     <div class="report-header">
       <div class="report-title-block">
-        <div class="eyebrow">Blog &amp; Insights</div>
+        <div class="eyebrow">Executive Briefing</div>
         <div class="report-name">The WES <span>Report</span></div>
-        <div class="report-tagline">AI, emerging tools, and what's changing the way people learn at work, so your training never falls behind.</div>
+        <div class="report-tagline">Where AI is quietly creating (and destroying) value inside real organizations. One clear read for leaders. No hype, no jargon.</div>
       </div>
-      <a href="#wes-report" class="report-subscribe">Get New Issues →</a>
+      <a href="#wes-report" class="report-subscribe">Get the Briefing →</a>
     </div>
     <div class="report-grid">
 
@@ -1746,9 +1747,9 @@ h2.section-title em { color: var(--blue-600); font-style: italic; }
   <div class="section-inner">
     <div class="contact-grid">
       <div class="contact-left">
-        <div class="eyebrow">Work With Me</div>
-        <div class="contact-tagline">Let's build something<br><em>worth learning.</em></div>
-        <p class="contact-sub">Whether you have a fully-scoped project or just an idea, I'd love to hear about it. Fill out the form and I'll get back to you within 1 business day.</p>
+        <div class="eyebrow">Let's Talk</div>
+        <div class="contact-tagline">Let's turn AI into<br><em>real performance.</em></div>
+        <p class="contact-sub">Whether you have a fully-scoped project or just an early idea, we'd love to hear it. You'll get a real reply within one business day, then a 20-minute call where we tell you honestly if we can help, and if we can't, who can.</p>
         <div class="contact-info">
           <div class="contact-info-row"><svg class="ico" width="16" height="16"><use href="#i-pin"/></svg> New Port Richey, FL · Available remotely worldwide</div>
           <div class="contact-info-row"><svg class="ico" width="16" height="16"><use href="#i-phone"/></svg> <a href="tel:7272226984">727.222.6984</a></div>
@@ -1789,7 +1790,7 @@ h2.section-title em { color: var(--blue-600); font-style: italic; }
           <label for="msg">Tell Me About Your Project</label>
           <textarea id="msg" placeholder="Briefly describe what you need, goals, audience, timeline, budget range, etc." required></textarea>
         </div>
-        <button type="submit" class="form-submit" id="submit-btn">Send Message →</button>
+        <button type="submit" class="form-submit" id="submit-btn">Book a Discovery Call →</button>
       </form>
     </div>
   </div>
@@ -1838,7 +1839,7 @@ function handleSubmit(e) {
   btn.style.background = '#065F46';
   btn.disabled = true;
   setTimeout(function() {
-    btn.textContent = 'Send Message →';
+    btn.textContent = 'Book a Discovery Call →';
     btn.style.background = '';
     btn.disabled = false;
     e.target.reset();
