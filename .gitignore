@@ -16,3 +16,6 @@ desktop.ini
 
 # Claude agent worktrees
 .claude/worktrees/
+
+# Vercel
+.vercel
